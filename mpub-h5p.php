@@ -1,0 +1,29 @@
+<?php
+/*
+Plugin Name: mpub-h5p
+Plugin URI:  http://link to your plugin homepage
+Description: Adds mpublish css to h5p
+Version:     1.0
+Author:      Dilewe
+Author URI:  http://link to your website
+License:     GPL2 etc
+License URI: http://link to your plugin license
+*/
+
+function h5p_mpub_alter_styles(&$styles, $libraries, $embed_type) {
+  $styles[] = (object) array(
+    // Path must be relative to wp-content/uploads/h5p or absolute.
+    'path' =>  plugin_dir_url(__FILE__).'/custom.css',
+    'version' => '?ver='.filemtime(dirname(__FILE__).'/custom.css')
+  );
+}
+add_action('h5p_alter_library_styles', 'h5p_mpub_alter_styles', 10, 3);
+
+function h5p_mpub_alter_scripts(&$scripts, $libraries, $embed_type) {
+  $scripts[] = (object) array(
+    // Path must be relative to wp-content/uploads/h5p or absolute.
+    'path' =>  plugin_dir_url(__FILE__).'/custom.js',
+    'version' => '?ver='.filemtime(dirname(__FILE__).'/custom.js')
+  );
+}
+add_action('h5p_alter_library_scripts', 'h5p_mpub_alter_scripts', 10, 3);

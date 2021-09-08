@@ -1,0 +1,14 @@
+/* Jura only */
+
+@media screen and (max-width: 700px) {
+  .h5p-content[data-content-id="7"] .h5p-agamotto .h5p-agamotto-wrapper .h5p-agamotto-slider-container {
+    height: 60px !important;
+  }
+}
+.h5p-content[data-content-id="11"] .h5p-image-hotspot {
+  font-size: 1em;
+}
+
+.h5p-question-introduction {
+  font-size: 0.9em;
+}
