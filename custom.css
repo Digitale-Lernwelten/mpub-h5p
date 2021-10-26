@@ -370,6 +370,7 @@ html.h5p-iframe > body {
   .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick-label {
     font-size: 0.5em !important;
     transform: rotate(-30deg);
+    top: 5px;
   }
 }
 
@@ -1957,6 +1958,38 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
   border-bottom: 2px solid #257da7;
   border-radius: 0;
 }
+
+/*Interactive Book*/
+.h5p-interactive-book-status-progressbar-front {
+    background-color: #257da7;
+}
+.h5p-interactive-book-status-progress-number {
+    color: #257da7;
+}
+
+.h5p-interactive-book-status-arrow .navigation-button {
+    color: #257da7;
+}
+
+.h5p-interactive-book-status-menu .icon-menu {
+    color: #257da7;
+  }
+  .h5p-interactive-book-navigation-maintitle {
+    background-color: #257da7;
+  }
+
+  .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
+    color: #257da7;
+    font-family: 'Montserrat';
+    font-weigt: 600;
+  }
+
+  .h5p-interactive-book-status-chapter .title {
+    font-family: 'Montserrat';
+    font-weigt: 600;
+  }
+
+
 
 /*LASUB ONLY*/
 
