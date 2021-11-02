@@ -1981,15 +1981,25 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
   .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
     color: #257da7;
     font-family: 'Montserrat';
-    font-weigt: 600;
+    font-weight: 600;
   }
 
   .h5p-interactive-book-status-chapter .title {
     font-family: 'Montserrat';
-    font-weigt: 600;
+    font-weight: 600;
   }
 
+  .h5p-interactive-book-status-fullscreen.h5p-interactive-book-enter-fullscreen::before {
+    color: #257da7;
+  }
+  
+  .h5p-interactive-book-navigation-maintitle .navigation-title {
+	font-family: 'Montserrat';
+  }
 
+  .h5p-interactive-book-status-menu.h5p-interactive-book-status-menu-active {
+    background-color: #257da7;
+  }
 
 /*LASUB ONLY*/
 
