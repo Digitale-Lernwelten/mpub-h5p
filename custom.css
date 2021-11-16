@@ -2049,21 +2049,22 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 .h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-selected{
 	background: #257da740;
   	border-color: #257da7;
+	color: #257da7;
 }
 
-.h5p-sort-paragraphs-paragraph-placeholder{
-	color: #257da7;
+.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-over {
+	color: #257da740;
 	border-color: #257da7;
 }
 
 /*Crossword*/
 .h5p-crossword .h5p-crossword-input-fields-group-wrapper-clue .h5p-crossword-input-fields-group-clue-content .h5p-crossword-input-fields-group-extra-clue {
-    color: #1a73d9;
+    color: #257da7;
 }
 
 .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
     border-color: #257da7;
-    box-shadow: 0 0 0.2em 0.2em #257da7;
+    box-shadow: 0 0 0.2em 0.1em #257da7;
 }
 
 /*LASUB ONLY*/
