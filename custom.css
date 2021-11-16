@@ -2052,9 +2052,9 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 	color: #257da7;
 }
 
-.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-over {
-	color: #257da740;
-	border-color: #257da7;
+.h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph-placeholder{
+	background-color:#257da740;
+	border:.25em dashed #257da7;
 }
 
 /*Crossword*/
