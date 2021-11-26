@@ -2076,6 +2076,18 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
   display:none;
 }
 
+.h5p-content[data-content-id="651"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="652"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="653"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="654"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="655"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="656"] .h5p-question-buttons.h5p-question-visible,
+.h5p-content[data-content-id="657"] .h5p-question-buttons.h5p-question-visible{
+	display:none;
+}
+
+
+
 /*
 @media screen and (max-width: 700px) {
   .h5p-content[data-content-id="7"] .h5p-agamotto .h5p-agamotto-wrapper .h5p-agamotto-slider-container {
