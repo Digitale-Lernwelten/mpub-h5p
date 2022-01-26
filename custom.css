@@ -2110,6 +2110,60 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 }
 */
 
+/* *************************************************************** */
+/* HERE STARTS THE CUSTOM PART FOR THE JURA MUSEUM WITH OVERRRIDES */
+/* *************************************************************** */
+/* Jura only */
+:root {
+  --dlw-jura: rgba(35,47,102,1);
+  --dlw-hotspot: rgba(79,100,160,1);
+  --dlw-alpha: rgba(0,30,117, 0.69);
+}
+
+.h5p-tag-juramuseum a {
+  color: var(--dlw-jura);
+}
+
 .h5p-tag-juramuseum .h5p-question-introduction {
   font-size: 0.9em;
+}
+
+.h5p-tag-juramuseum .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick-label {
+  color: var(--dlw-jura);
+}
+
+.h5p-tag-juramuseum .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-slider-thumb {
+  background-color: var(--dlw-jura);
+}
+
+.h5p-tag-juramuseum .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-slider-thumb:hover {
+  background-color: var(--dlw-jura);
+}
+
+.h5p-tag-juramuseum .h5peditor .ui-dialog .h5p-joubelui-button,
+.h5p-tag-juramuseum .h5peditor .h5p-joubelui-button,
+.h5p-tag-juramuseum .h5p-joubelui-button {
+  background: var(--dlw-jura);
+}
+
+.h5p-tag-juramuseum .h5p-dragquestion .h5p-draggable.h5p-correct::after,
+.h5p-tag-juramuseum .h5p-dragquestion .h5p-draggable.h5p-wrong::after {
+  font-size: 1em;
+}
+
+.h5p-tag-juramuseum .h5p-joubelui-score-bar-progress {
+  background: var(--dlw-jura);
+}
+
+.h5p-tag-juramuseum .h5p-image-hotspot {
+  color: var(--dlw-alpha)!important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.h5p-tag-juramuseum .h5p-draggable-hover {
+  border-color: var(--dlw-jura)!important;
+}
+
+.h5p-tag-juramuseum .h5p-memory-reset {
+  background: var(--dlw-jura);
 }
