@@ -319,7 +319,6 @@ html.h5p-iframe > body {
 /*Slider Regler*/
 .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-slider-thumb {
   position: absolute;
-  speak: none;
   color: #fbfbfb;
   z-index: 3;
   bottom: 10px;
@@ -2110,6 +2109,17 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 	display: none;
 }
 
+.h5p-content[data-content-id="1351"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer,
+.h5p-content[data-content-id="1352"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer,
+.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
+	filter: opacity(0.9) drop-shadow(0 0 0 red);
+}
+
+.h5p-content[data-content-id="1351"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer,
+.h5p-content[data-content-id="1352"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer,
+.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
+	filter: opacity(0.9) drop-shadow(0 0 0 green);
+}
 
 /*
 @media screen and (max-width: 700px) {
