@@ -373,6 +373,10 @@ html.h5p-iframe > body {
   }
 }
 
+.h5p-agamotto-descriptions-container {
+  font-size: 1.5em;
+}
+
 /*Audio Recorder*/
 
 .h5p-audio-recorder-view {
@@ -1894,6 +1898,23 @@ html .h5p-memory-game .h5p-row-break {
   font-size: 10px !important;
 }
 
+/*Timeline new*/
+#h5p-timeline .vco-slider .slider-item .content .content-container {
+  display: flex !important;
+}
+#h5p-timeline .vco-slider .slider-item .content .content-container .credit {
+  display: none;
+}
+#h5p-timeline .vco-slider .slider-item .content .content-container .text {
+  width: 100%;
+}
+
+#h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .media ~ .text {
+  width: 50% !important;
+}
+
+
+width: 50% !important;
 /*Fill in the Table*/
 .h5p-question-content {
     overflow: auto;
@@ -1932,6 +1953,38 @@ html .h5p-memory-game .h5p-row-break {
 }
 .h5p-documentation-tool-page .page-help-text {
     color: #257da7;
+}
+.h5p-documentation-tool .legend .legend-header {
+  color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+.h5p-documentation-tool .legend .legend-header::before {
+  content: "Bewertungsmöglichkeiten";
+  color: #333;
+}
+.h5p-documentation-tool .goals-header .goal-name-header,
+.h5p-documentation-tool .goals-header .rating-header {
+  color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+.h5p-documentation-tool .goals-header .goal-name-header::before,
+.h5p-documentation-tool .goals-header .rating-header::before {
+  color: black;
+  font-weight: bold;
+}
+.h5p-documentation-tool .goals-header .goal-name-header::before {
+  content: "Eintrag";
+}
+.h5p-documentation-tool .goals-header .rating-header::before {
+  content: "Bewertung";
 }
 
 /*Find the Words*/
@@ -2111,26 +2164,17 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 
 .h5p-content[data-content-id="1351"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer,
 .h5p-content[data-content-id="1352"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer,
-.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
+.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer,
+.h5p-content[data-content-id="1268"] .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
 	filter: opacity(0.9) drop-shadow(0 0 0 red);
 }
 
 .h5p-content[data-content-id="1351"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer,
 .h5p-content[data-content-id="1352"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer,
-.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
+.h5p-content[data-content-id="1353"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer,
+.h5p-content[data-content-id="1268"] .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
 	filter: opacity(0.9) drop-shadow(0 0 0 green);
 }
-
-/*
-@media screen and (max-width: 700px) {
-  .h5p-content[data-content-id="7"] .h5p-agamotto .h5p-agamotto-wrapper .h5p-agamotto-slider-container {
-    height: 60px !important;
-  }ssh
-}
-.h5p-content[data-content-id="11"] .h5p-image-hotspot {
-  font-size: 1em;
-}
-*/
 
 /* *************************************************************** */
 /* HERE STARTS THE CUSTOM PART FOR THE JURA MUSEUM WITH OVERRRIDES */
