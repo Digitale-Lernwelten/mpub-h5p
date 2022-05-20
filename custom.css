@@ -1385,6 +1385,10 @@ content: "\f144";
   background: grey;
 }
 
+.h5p-questionnaire-button, .h5peditor .h5p-questionnaire-button {
+	font-family: 'Montserrat';
+}
+
 .h5p-questionnaire-submit-screen .h5p-questionnaire-button.previous {
   background: #257da7;
 }
