@@ -2159,9 +2159,12 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 /* IN THIS SECTION WE ADD CUSTOM REQUIREMENTS TO SPECIFIC TASKS VIA ID */
 /* ******************************************************************* */
 
-/*Hide Scorebar*/
+/*Hide Scorebar and add margin to retry button*/
 .h5p-content[data-content-id="1308"] .h5p-question-buttons.has-scorebar,
-.h5p-content[data-content-id="1398"] .h5p-question-buttons.has-scorebar {
+.h5p-content[data-content-id="1398"] .h5p-question-buttons.has-scorebar,
+.h5p-content[data-content-id="1597"] .h5p-question-buttons.has-scorebar,
+.h5p-content[data-content-id="1592"] .h5p-question-buttons.has-scorebar,
+.h5p-content[data-content-id="1641"] .h5p-question-buttons.has-scorebar {
     margin-left: 1em;
 }
 .h5p-content[data-content-id="1308"] .h5p-question-scorebar.h5p-question-visible,
