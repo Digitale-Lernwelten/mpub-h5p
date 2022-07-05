@@ -738,7 +738,7 @@ html.h5p-iframe > body {
 
 .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct){
 	border: solid 1.5px #dee8f0;
-	border-color: #dee8f0;
+	background-color: #dee8f0;
 }
 
 /*Dropzone*/
