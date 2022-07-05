@@ -736,6 +736,11 @@ html.h5p-iframe > body {
   border-color: #257DA7;
 }
 
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct){
+	border: solid 1.5px #dee8f0;
+	border-color: #dee8f0;
+}
+
 /*Dropzone*/
 .h5p-dragquestion .h5p-dq-highlight-dz .h5p-dropzone>.h5p-inner.h5p-active,
 .h5p-dragquestion .h5p-dq-highlight-dz-always .h5p-dropzone>.h5p-inner {
@@ -2015,44 +2020,44 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
 
 /*Interactive Book*/
 .h5p-interactive-book-status-progressbar-front {
-    background-color: #257da7;
+    background-color: #257da7 !important;
 }
 .h5p-interactive-book-status-progress-number {
-    color: #257da7;
+    color: #257da7 !important;
 }
 
 .h5p-interactive-book-status-arrow .navigation-button {
-    color: #257da7;
+    color: #257da7 !important;
 }
 
 .h5p-interactive-book-status-menu .icon-menu {
-    color: #257da7;
+    color: #257da7 !important;
   }
   .h5p-interactive-book-navigation-maintitle {
-    background-color: #257da7;
+    background-color: #257da7 !important;
   }
 
   .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
-    color: #257da7;
-    font-family: 'Montserrat';
-    font-weight: 600;
+    color: #257da7 !important;
+    font-family: 'Montserrat' !important;
+    font-weight: 600 !important;
   }
 
   .h5p-interactive-book-status-chapter .title {
-    font-family: 'Montserrat';
-    font-weight: 600;
+    font-family: 'Montserrat' !important;
+    font-weight: 600 !important;
   }
 
   .h5p-interactive-book-status-fullscreen.h5p-interactive-book-enter-fullscreen::before {
-    color: #257da7;
+    color: #257da7 !important;
   }
   
   .h5p-interactive-book-navigation-maintitle .navigation-title {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat' !important;
   }
 
   .h5p-interactive-book-status-menu.h5p-interactive-book-status-menu-active {
-    background-color: #257da7;
+    background-color: #257da7 !important;
   }
 
 /*Image Choice*/
