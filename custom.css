@@ -2060,6 +2060,10 @@ html body .h5p-content > .h5p-standalone.h5p-find-the-words > .h5p-play-area {
     background-color: #257da7 !important;
   }
 
+  .h5p-interactive-book-status-menu.h5p-interactive-book-status-menu-active .icon-menu {
+    color: #fff
+  }
+
 /*Image Choice*/
 .h5p-multi-media-choice .h5p-multi-media-choice-enabled:hover:not(.h5p-multi-media-choice-selected) {
     border-color: #257da7;
