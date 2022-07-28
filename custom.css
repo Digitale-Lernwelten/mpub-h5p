@@ -736,10 +736,12 @@ html.h5p-iframe > body {
   border-color: #257DA7;
 }
 
-.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct){
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct),
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct):not(.h5p-wrong) {
 	border: solid 1.5px #dee8f0;
 	background-color: #dee8f0;
 }
+
 
 /*Dropzone*/
 .h5p-dragquestion .h5p-dq-highlight-dz .h5p-dropzone>.h5p-inner.h5p-active,
