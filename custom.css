@@ -448,6 +448,16 @@ html.h5p-iframe > body {
   z-index: 1;
 }
 
+.h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick {
+	background: var(--dlw-blue);
+	margin-bottom: 5px;
+}
+
+.h5p-tag-lasub .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick {
+	background: var(--dlw-lasub-main);
+	margin-bottom: 5px;
+}
+
 .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick-label {
   position: absolute;
   font-size: .8em;
