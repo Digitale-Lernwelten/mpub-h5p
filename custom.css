@@ -899,7 +899,7 @@ html.h5p-iframe > body {
 }
 
 .h5p-tag-lasub .h5p-drag-text [aria-dropeffect] {
-	background-color: white;
+	background-color: #c2c2c29c;
 	height: 1.4em;
   }
 
@@ -1005,7 +1005,6 @@ html.h5p-iframe > body {
 .h5p-dragquestion .h5p-draggable,
 .h5p-dragquestion .h5p-draggable.h5p-dropped {
   background-color: white;
-  border-color: var(--dlw-blue) !important;
   color: black;
 }
 
@@ -1534,7 +1533,8 @@ li.h5p-sc-alternative .h5p-sc-progressbar {
   content: "\f105";
 }
 
-.h5p-question .h5p-question-previous:before  {
+.h5p-question .h5p-question-previous:before, 
+.h5p-question .h5p-question-prev:before {
   content: "\f104";
 }
 
@@ -1916,7 +1916,7 @@ content: "\f144";
 	background: var(--dlw-lasub-main);
 }
 
-.h5p-tag-lasub .input[type="radio" i] {
+.h5p-tag-lasub .input[type="radio"] {
 	background-color: var(--dlw-lasub-main);
 }
 
@@ -2148,7 +2148,7 @@ background: url(..//libraries/H5P.InteractiveVideo-1.22/dist/fonts/score_h5p_gre
 }
 
 .h5p-tag-lasub .h5p-image-juxtaposition-image .h5p-image-juxtaposition-label {
-	background-color: rgba(var(--dlw-lasub-main),0.7);
+	background-color: rgba(var(--dlw-lasub-main),70);
   }
 
 /*Image Pair*/
@@ -2214,7 +2214,7 @@ background: url(..//libraries/H5P.InteractiveVideo-1.22/dist/fonts/score_h5p_gre
 	box-shadow: 0 0 0 0;
 }
 
-.h5p-tag-lasub .droppable .h5p-image-pair-item-hover{
+.h5p-tag-lasub .droppable.h5p-image-pair-item-hover {
 	border: 2px dashed var(--dlw-lasub-main) !important;
 }
 
@@ -2641,7 +2641,7 @@ html .h5p-memory-game .h5p-row-break {
 }
 
 .vco-timeline .vco-navigation .timenav .content .marker.active .dot{
-	background: var(--dlw-lasub-dark);
+	background: var(--dlw-lasub-dark) !important;
 }
 
 .h5p-tag-lasub .vco-timeline .vco-navigation .timenav .content .marker.active .line .event-line {
