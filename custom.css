@@ -1021,7 +1021,6 @@ html.h5p-iframe > body {
 .h5p-tag-lasub .h5p-dragquestion .h5p-draggable,
 .h5p-tag-lasub .h5p-dragquestion .h5p-draggable.h5p-dropped {
   background-color: white;
-  border-color: var(--dlw-lasub-main) !important;
   color: black;
 }
 
@@ -2158,8 +2157,8 @@ background: url(..//libraries/H5P.InteractiveVideo-1.22/dist/fonts/score_h5p_gre
 }
 
 .h5p-tag-lasub .h5p-image-juxtaposition-image .h5p-image-juxtaposition-label {
-	background-color: rgba(var(--dlw-lasub-main),70);
-  }
+	background-color: #cc8002bd; /*Attention, rgba with variable wasn't working*/
+}
 
 /*Image Pair*/
 
