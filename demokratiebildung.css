@@ -1,0 +1,1230 @@
+:root {
+	--db-main: rgba(179, 72, 150,1);
+	--db-light: rgba(209, 145, 192,1);
+	--db-dark: rgba(134, 54, 113,1);
+	--db-green: rgba(74, 246, 182,1);
+	--db-red: rgba(229, 51, 65,1);
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-Bold.woff2') format('woff2'),
+        url('fonts/Inconsolata-Bold.woff') format('woff'),
+        url('fonts/Inconsolata-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-ExtraBold.woff2') format('woff2'),
+        url('fonts/Inconsolata-ExtraBold.woff') format('woff'),
+        url('fonts/Inconsolata-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-Black.woff2') format('woff2'),
+        url('fonts/Inconsolata-Black.woff') format('woff'),
+        url('fonts/Inconsolata-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-Medium.woff2') format('woff2'),
+        url('fonts/Inconsolata-Medium.woff') format('woff'),
+        url('fonts/Inconsolata-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-Regular.woff2') format('woff2'),
+        url('fonts/Inconsolata-Regular.woff') format('woff'),
+        url('fonts/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-Light.woff2') format('woff2'),
+        url('fonts/Inconsolata-Light.woff') format('woff'),
+        url('fonts/Inconsolata-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-SemiBold.woff2') format('woff2'),
+        url('fonts/Inconsolata-SemiBold.woff') format('woff'),
+        url('fonts/Inconsolata-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/Inconsolata-ExtraLight.woff2') format('woff2'),
+        url('fonts/Inconsolata-ExtraLight.woff') format('woff'),
+        url('fonts/Inconsolata-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*Everything that contains a specific font instruction*/
+
+.h5p-tag-demokratie .html.h5p-iframe,
+html.h5p-iframe > body {
+  font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-task-description {
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.h5p-tag-demokratie .h5peditor .ui-dialog .h5p-joubelui-button,
+.h5p-tag-demokratie .h5peditor .h5p-joubelui-button,
+.h5p-tag-demokratie .h5p-joubelui-button {
+  background: var(--db-main);
+  font-family: 'Inconsolata';
+  font-weight: 300;
+}
+
+.h5p-tag-demokratie .h5p-audio-recorder-view {
+    font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario-subtitle-text {
+	color: var(--db-main);
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-start-button,
+.h5p-tag-demokratie .h5p-end-button,
+.h5p-tag-demokratie .h5p-nav-button {
+  border-color: var(--db-main);
+  color: var(--db-main);
+  font-family: Inconsolata;
+  border-radius: .8rem;
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-screen-header .h5p-title-wrapper h1 {
+	font-family: Inconsolata;
+	color: #5C6674;
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-branching-question button {
+	background-color: white;
+	border-color: var(--db-main);
+	font-family: Inconsolata;
+	color: var(--db-main);
+	border-radius: .8rem;
+}
+
+.h5p-tag-demokratie .h5p-course-presentation p {
+	font-family: 'Inconsolata';
+}
+  
+.h5p-tag-demokratie .h5p-course-presentation .h5p-element {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-dq-element.h5p-draggable {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-dq-dz-label {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-flashcards {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-answer .h5p-textinput {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-answer .h5p-button {
+	font-family: 'Inconsolata';
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-answer .h5p-button:hover {
+    background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire {
+	font-family: Inconsolata;
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-button, .h5peditor .h5p-questionnaire-button {
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .h5p-personality-quiz {
+	font-family: "Inconsolata", sans-serif;
+}
+
+.h5p-tag-demokratie .h5p-personality-quiz .h5p-personality-quiz-title {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 1em 0;
+	margin: 0;
+	text-align: center;
+	font-size: 2.4em;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.h5p-tag-demokratie .h5p-personality-quiz .h5p-personality-quiz-start-button .h5p-personality-quiz-button[style] {
+	font-family: 'Inconsolata';
+	border-left: 5px solid rgb(30, 62, 81);
+	background: linear-gradient(to right, rgb(30, 62, 81) 50%, rgb(233, 239, 247) 50%) 100% center / 200% 100%;
+}
+
+.h5p-tag-demokratie .h5p-image-pair-desc {
+	font-family: 'Inconsolata', sans-serif;
+	color: #000000;
+	font-size: 1.125em;
+	line-height: 1.125em;
+	padding: 1em;
+	border-bottom: 1px solid #dde4ea;
+}
+
+.h5p-tag-demokratie .h5p-blanks .h5p-text-input {
+	font-family: 'Inconsolata', sans-serif;
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .text {
+	width: 98% !important;
+	font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs {
+	font-family: "Inconsolata", sans-serif;
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h1,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h2,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h3,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h4,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h5,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature h6 {
+  font-family: "Inconsolata", sans-serif !important;
+}
+
+.h5p-tag-demokratie .vco-slider .nav-previous .title,
+.h5p-tag-demokratie .vco-slider .nav-next .title {
+  font-family: "Inconsolata";
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.h5p-tag-demokratie .vco-slider .nav-previous .date,
+.h5p-tag-demokratie .vco-slider .nav-next .date {
+  font-family: "Inconsolata";
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.h5p-tag-demokratie .vco-slider .nav-previous .date,
+.h5p-tag-demokratie .vco-slider .nav-next .date {
+  font-family: "Inconsolata";
+}
+
+.h5p-tag-demokratie .vco-slider .slider-item .content .content-container .text .container h2.date {
+	font-family: "Inconsolata" !important;
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: normal;
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vco-feature p,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs h2.date {
+  font-family: "Inconsolata" !important;
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs p,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs blockquote,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs blockquote p,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .twitter blockquote p {
+  font-family: 'Inconsolata', sans-serif !important;
+  /*funktioniert nicht, warum?*/
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker.active .flag .flag-content h3,
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker.active .flag-small .flag-content h3 {
+  color: var(--db-main) !important;
+  font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h1,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h1,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h1,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h2,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h2,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h2,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h3,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h3,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h3,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h4,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h4,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h4,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h5,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h5,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h5,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .timenav h6,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .flag-content h6,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .era h6 {
+  font-family: "Inconsolata", sans-serif !important;
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .time .time-interval-major div {
+	font-family: "Inconsolata" !important;
+	padding-top: 11px !important;
+}
+  
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .twitter,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .vcard,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .messege,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .credit,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .caption,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .zoom-in,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .zoom-out,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .back-home,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .time-interval div,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .time-interval-major div,
+.h5p-tag-demokratie #h5p-timeline .vco-storyjs .nav-container {
+  font-family: "Inconsolata", sans-serif !important;
+  /*funktioniert nicht*/
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
+	color: var(--db-main) !important;
+	font-family: 'Inconsolata' !important;
+	font-weight: 600 !important;
+}
+
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
+	color: var(--db-main) !important;
+	font-family: 'Inconsolata' !important;
+	font-weight: 600 !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-chapter .title {
+	font-family: 'Inconsolata' !important;
+	font-weight: 600 !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-navigation-maintitle .navigation-title {
+	font-family: 'Inconsolata' !important;
+}
+
+/*Everything that contains color feedback*/
+  
+.h5p-tag-demokratie .h5p-true-false-answer.correct:after {
+	background: var(--db-green);
+}
+  
+.h5p-tag-demokratie .h5p-true-false-answer.wrong:after {
+	background: var(--db-red);
+}
+
+.h5p-tag-demokratie .h5p-dragquestion .h5p-dropped.h5p-correct,
+.h5p-tag-demokratie .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
+  background-color: rgba(var(--db-green),80);
+}
+
+.h5p-tag-demokratie .h5p-dragquestion .h5p-dropped.h5p-wrong,
+.h5p-tag-demokratie .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
+  background-color: rgba(var(--db-red),80);
+  filter: grayscale(1);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder>.h5p-flashcard-overlay {
+	background-color: var(--db-green);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-card.h5p-wrong .h5p-imageholder>.h5p-flashcard-overlay {
+	background-color: var(--db-red);
+}
+  
+.h5p-tag-demokratie .h5p-flashcards .h5p-results-box {
+	background-color: var(--db-green);
+}
+  
+.h5p-tag-demokratie .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-box {
+	background-color: var(--db-red);
+}
+  
+.h5p-tag-demokratie .h5p-flashcards .h5p-results-list-item.h5p-incorrect .h5p-results-answer {
+	color: var(--db-red);
+}
+  
+.h5p-tag-demokratie .h5p-flashcards .h5p-results-answer {
+	color: var(--db-green);
+}
+
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-correct,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-correct:hover,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-correct:active,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-correct:focus {
+  background: white;
+  color: var(--db-green);
+  border-color: var(--db-green);
+}
+
+.h5p-tag-demokratie ul.h5p-sc-alternatives li.h5p-sc-alternative.h5p-sc-is-correct.h5p-sc-selected.h5p-sc-reveal-correct .h5p-sc-progressbar {
+  background: white;
+  color: var(--db-green);
+  border-color: var(--db-green);
+}
+
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-wrong.h5p-sc-selected,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-wrong.h5p-sc-selected:hover,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-wrong.h5p-sc-selected:active,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-reveal-wrong.h5p-sc-selected:focus,
+.h5p-tag-demokratie ul.h5p-sc-alternatives.h5p-sc-selected li.h5p-sc-alternative.h5p-sc-is-wrong.h5p-sc-selected.h5p-sc-reveal-wrong .h5p-sc-progressbar {
+  background: white;
+  color: var(--db-red);
+  border-color: var(--db-red);
+}
+
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container {
+  background: rgba(var(--db-green),80);
+  border-color: rgba(var(--db-green),80);
+  color: var(--db-green);
+  box-shadow: 0 0.1em 0 rgba(var(--db-green),80);
+}
+
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container {
+	background: rgba(var(--db-green),80);
+	border-color: rgba(var(--db-green),80);
+	color: var(--db-green);
+	box-shadow: 0 0.1em 0 rgba(var(--db-green),80);
+}
+
+/*MC richtige Antwort reveal hover*/
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container:hover {
+	background: rgba(var(--db-green),80);
+	border-color: rgba(var(--db-green),80);
+	color: var(--db-green);
+	box-shadow: 0 0.1em 0 rgba(var(--db-green),80);
+}
+
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-correct .h5p-alternative-container:hover {
+	background: rgba(var(--db-green),80);
+	border-color: rgba(var(--db-green),80);
+	color: var(--db-green);
+	box-shadow: 0 0.1em 0 rgba(var(--db-green),80);
+}
+
+/*MC falsche Antwort reveal*/
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container {
+	background: rgba(var(--db-red),80);
+	border-color: rgba(var(--db-red),80);
+	color: var(--db-red);
+	box-shadow: 0 0.1em 0 rgba(var(--db-red),80);
+  }
+
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container {
+  background: rgba(var(--db-red),80);
+  border-color: rgba(var(--db-red),80);
+  color: var(--db-red);
+  box-shadow: 0 0.1em 0 rgba(var(--db-red),80);
+}
+
+/*MC falsche Antwort reveal hover*/
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container:hover {
+	background: rgba(var(--db-red),80);
+	border-color: rgba(var(--db-red),80);
+	color: var(--db-red);
+	box-shadow: 0 0.1em 0 rgba(var(--db-red),80);
+  }
+
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container,
+.h5p-tag-demokratie .h5p-tag-demokratie .h5p-multichoice .h5p-answer.h5p-wrong .h5p-alternative-container:hover {
+	background: rgba(var(--db-red),80);
+	border-color: rgba(var(--db-red),80);
+	color: var(--db-red);
+	box-shadow: 0 0.1em 0 rgba(var(--db-red),80);
+  }
+
+.h5p-tag-demokratie .h5p-true-false-answer.correct:after {
+	background: var(--db-green);
+	border-radius: 0.8em;
+	right: -1px;
+}
+  
+.h5p-tag-demokratie .h5p-true-false-answer.wrong:after {
+	background: var(--db-red);
+	border-radius: 0.8em;
+	right: -1px;
+}
+
+/*Everything tag/project-specific*/
+
+.h5p-tag-demokratie .h5p-joubelui-button:active {
+	background: var(--db-main);
+	-webkit-box-shadow: inset 0px -1px 0 var(--db-dark);
+	-moz-box-shadow: inset 0 4px 0 var(--db-dark);
+	box-shadow: inset 0 4px 0 var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-joubelui-button:hover,
+.h5p-tag-demokratie .h5p-joubelui-button:focus {
+  background: var(--db-main);
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: initial;
+  -moz-transition: initial;
+  -o-transition: initial;
+  transition: initial;
+}
+
+.h5p-tag-demokratie .h5p-interactive-video div:hover>.h5p-interaction-button {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video div>.h5p-interaction-button {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video div:focus>.h5p-interaction-button {
+	top: -0.167em;
+	left: -0.167em;
+	border: 0.167em solid var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-image-pair .feedback-text {
+	display: block;
+	color: var(--db-main);
+	font-weight: bold;
+	margin-bottom: 0.8em;
+}
+
+.h5p-tag-demokratie .h5p-question-feedback {
+	font-weight: bold;
+	color: var(--db-main);
+	margin: 0 1em;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 0.15s ease, margin-top 0.15s ease, margin-bottom 0.15s ease, opacity 0.15s cubic-bezier(0, 1, 0, 1);
+}
+
+.h5p-tag-demokratie .h5p-joubelui-score-bar-progress {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-joubelui-score-bar .joubel-tip-container {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .progress-dot.current {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .progress-dot.answered {
+    background: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-accordion .h5p-panel-title:hover,
+.h5p-tag-demokratie .h5p-accordion .h5p-panel-title:focus,
+.h5p-tag-demokratie .h5p-accordion .h5p-panel-title:active {
+  color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-slider-thumb {
+	position: absolute;
+	color: #fbfbfb;
+	z-index: 3;
+	bottom: 10px;
+	left: 8px;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	text-shadow: 0 0 2px #666;
+	outline: none;
+	border: 0;
+	background: url(..//libraries/H5P.Agamotto-1.5/dist/images/slider_thumb.svg);
+	/*transparent*/
+	background-color: var(--db-main);
+	background-size: contain;
+	border-radius: 2px;
+}
+
+.h5p-tag-demokratie .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-slider-thumb:hover {
+	background-color: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick {
+	background: var(--db-main);
+	margin-bottom: 5px;
+}
+
+.h5p-tag-demokratie .h5p-agamotto .h5p-agamotto-slider-container .h5p-agamotto-tick-label {
+	position: absolute;
+	font-size: .8em;
+	top: 2px;
+	color: var(--db-main);
+	z-index: 2;
+}
+
+.h5p-tag-demokratie .recording-indicator-wrapper {
+	height: 7em;
+	color: var(--db-main)
+}
+
+.h5p-tag-demokratie .h5p-audio-recorder-view .button.record {
+	background-color: var(--db-main);
+	color: #fff;
+	border-color: var(--db-main);
+	border: 2px solid var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-audio-recorder-view .button.record:hover {
+	background-color: var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-audio-recorder-view .button.record:active {
+	background-color: var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-screen-banner {
+	background: var(--db-main);
+	opacity: 0.9;
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario-title-text {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario button.h5p-branching-full-screen {
+	border: 0.083em solid var(--db-main);
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-start-button,
+.h5p-tag-demokratie .h5p-end-button,
+.h5p-tag-demokratie .h5p-nav-button {
+  border-color: var(--db-main);
+  color: var(--db-main);
+  font-family: Montserrat;
+  border-radius: .8rem;
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-start-button:hover,
+.h5p-tag-demokratie .h5p-end-button:hover, 
+.h5p-tag-demokratie .h5p-nav-button:not(.h5p-disabled):hover {
+	border-color: var(--db-main);
+	color: #fafafa;
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-start-button:active,
+.h5p-tag-demokratie .h5p-end-button:active,
+.h5p-tag-demokratie .h5p-nav-button:active {
+  color: white;
+  background: var(--db-dark);
+  border-color: var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-branching-question button {
+	background-color: white;
+	border-color: var(--db-main);
+	font-family: Montserrat;
+	color: var(--db-main);
+	border-radius: .8rem;
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-branching-question button:hover {
+	color: white;
+	background: var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-scenario .h5p-branching-question button:active {
+	color: white;
+	background: var(--db-dark);
+	border-color: var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-course-presentation .h5p-element .h5p-element-outer .h5p-element-inner::-webkit-scrollbar-thumb,
+.h5p-tag-demokratie .h5p-course-presentation .h5p-element .h5p-element-outer::-webkit-scrollbar-thumb,
+.h5p-tag-demokratie .h5p-course-presentation .h5p-keywords-wrapper>[role=menu]::-webkit-scrollbar-thumb {
+  background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-branching-question-alternative:hover {
+	background: #fafafa;
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-course-presentation .h5p-progressbar .h5p-progressbar-part-show {
+	background: var(--db-main);
+	background-image: transparent;
+	-webkit-transition: width .25s ease-in-out;
+	-moz-transition: width .25s ease-in-out;
+	-ms-transition: width .25s ease-in-out;
+	transition: width .25s ease-in-out;
+}
+
+.h5p-tag-demokratie .h5p-course-presentation .h5p-element-button {
+	background-color: var(--db-main);
+	border-color: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-course-presentation .h5p-element-button:hover {
+	box-shadow: 0 0.3em 0.25em 0 rgba(0, 0, 0, .5);
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-audio-inner .h5p-audio-minimal-button{
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-dialogcards .h5p-audio-minimal-button {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-dialogcards .h5p-audio-minimal-button:focus,
+.h5p-tag-demokratie .h5p-dialogcards .h5p-audio-minimal-button:hover {
+  background: var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-mark-the-words [aria-selected="true"] {
+	background: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-mark-the-words .h5p-word-selectable-words:not(.h5p-disable-hover) [role="option"]:hover {
+	box-shadow: inset 0px 0px 0px 2px var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-dialogcards .h5p-audio-minimal-button {
+	border: none;
+	background: var(--db-main);
+	font-weight: 400;
+	padding: 0;
+	font-size: 1em;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+
+.h5p-tag-demokratie .h5p-drag-text [aria-grabbed] {
+	border: 1px solid var(--db-main);
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 0.3em rgba(0, 0, 0, 0);
+}
+
+.h5p-tag-demokratie .h5p-drag-text [aria-grabbed='true'],
+.h5p-tag-demokratie .h5p-drag-text [aria-grabbed].h5p-drag-dropped:not(.ui-state-disabled):hover,
+.h5p-tag-demokratie .h5p-drag-text [aria-grabbed]:not(.ui-state-disabled):hover {
+  border: 0.1em solid var(--db-main);
+  color: black;
+  background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-drag-text [aria-grabbed].h5p-drag-dropped {
+	border: 0.1em solid var(--db-light);
+	background: var(--db-light);
+	color: black;
+}
+
+.h5p-tag-demokratie .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover {
+	background-color: white;
+	border: solid 1.5px;
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-dragquestion .h5p-my-fullscreen-button-enter,
+.h5p-tag-demokratie .h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-answer .h5p-button {
+	font-family: 'Montserrat';
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-answer .h5p-button:hover {
+    background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-textinput:focus {
+	outline: none;
+	box-shadow: 0 0 0.1em 0 var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .using-mouse .h5p-flashcards .h5p-button.h5p-check-button:active {
+    background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-navigation .h5p-button:hover {
+    background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-visual-progress {
+    background-color: var(--db-main);
+    border: 1px solid white;
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-visual-progress div {
+	background-color: white;
+}
+
+.h5p-tag-demokratie .h5p-flashcards .h5p-results-retry-button:hover {
+    background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie ul.h5p-sc-alternatives li.h5p-sc-alternative:hover {
+	border-color: var(--db-main);
+	background-color: #FFEAC7;
+}
+
+.h5p-tag-demokratie .h5p-single-choice-set .h5p-joubelui-progressbar-background {
+	box-shadow: 0 0 0.25em 0 #fff;
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-single-choice-set .h5p-sc-solution-view .h5p-sc-close-solution-view {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-speak-the-words-set .progress-dot.active {
+    background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer[aria-checked="true"] .h5p-alternative-container {
+	background: rgba(var(--db-main),0.4);
+	border-color: var(--db-main);
+	color: black;
+	box-shadow: 0 0 0 0;
+}
+
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer[aria-checked="true"] .h5p-alternative-container:hover {
+	border-color: var(--db-main);
+	background-color: #F9F0E1;
+	color: black;
+}
+
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer:not([aria-disabled="true"]):hover .h5p-alternative-container {
+	border-color: var(--db-main);
+	background-color: white;
+}
+
+.h5p-tag-demokratie .h5p-multichoice .h5p-answer[aria-checked="true"]:not(.h5p-wrong):not(.h5p-correct):not([aria-disabled="true"]):hover .h5p-alternative-container {
+	background-color: #F9F0E1;
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-true-false-answer:hover {
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-true-false-answer[aria-checked=true] {
+	border-color: var(--db-main);
+	background-color: white;
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-seekbar-interaction:before {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-time,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-simple-time {
+  color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-time .h5p-current,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-simple-time .h5p-current {
+  color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-minimal-overlay [aria-disabled=true].h5p-minimal-button,
+.h5p-tag-demokratie .h5p-interactive-video [aria-disabled=true].h5p-control:before {
+  color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video :not([aria-disabled="true"]).h5p-slider .ui-slider-handle:before {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video :not([aria-disabled="true"]).h5p-slider .ui-slider-handle:hover:before {
+	color: var(--db-light);
+}
+
+.h5p-tag-demokratie .ui-widget-header {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-control:before {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-buffered {
+	background-color: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-text-interaction>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-table-interaction>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-link-interaction>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-image-interaction>.h5p-interaction-button {
+  background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-text-interaction:hover>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-table-interaction:hover>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-link-interaction:hover>.h5p-interaction-button,
+.h5p-tag-demokratie .h5p-interactive-video .h5p-image-interaction:hover>.h5p-interaction-button {
+  background-color: var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-gotoquestion-text {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-open-ended-question-question {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-simple-multiple-choice-question {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .input[type="radio"] {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-progress-bar-widget-current {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-button,
+.h5p-tag-demokratie .h5peditor .h5p-questionnaire-button {
+  background: var(--db-main);
+  border: transparent;
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-button:hover {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-submit-screen .h5p-questionnaire-button.previous {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-button.submit {
+	background-color: var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-questionnaire-button.submit:hover {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-interaction-continue-button {
+	background-color: var(--db-main);
+	border: transparent;
+}
+
+.h5p-tag-demokratie .h5p-interactive-video .h5p-interaction-continue-button:hover {
+	background-color: var(--db-main);
+	border: transparent;
+}
+
+.h5p-tag-demokratie .h5p-free-text-question-text-wrapper {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-free-text-question-button-submit {
+	background-color: var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-free-text-question-button-submit:hover {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-image-pair-item {
+	border: 2px solid var(--db-main);
+	box-shadow: 2px 2px 0px 2px rgba(var(--db-main),0.2);
+}
+
+.h5p-tag-demokratie .h5p-image-pair-item-disabled {
+	border: 2px solid var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-image-pair-images-paired .card-paired {
+	border: 2px solid var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-image-pair-images-paired .h5p-image-pair-item-hover {
+	border: 2px solid var(--db-main) !important;
+	box-shadow: 0 0 0 0;
+}
+
+.h5p-tag-demokratie .droppable.h5p-image-pair-item-hover {
+	border: 2px dashed var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-image-pair-item-selected {
+	border: 2px solid var(--db-main);
+	z-index: 0 !important;
+	box-shadow: 2px 2px 0px 2px rgba(203, 213, 222, 0.2);
+	-webkit-box-shadow: 2px 2px 0px 2px rgba(203, 213, 222, 0.2);
+	-moz-box-shadow: 2px 2px 0px 2px rgba(203, 213, 222, 0.2);
+}
+
+.h5p-tag-demokratie .h5p-image-pair .ui-draggable-dragging {
+	-ms-transform: scale(.8, .8);
+	-webkit-transform: scale(.8, .8);
+	transform: scale(.8, .8);
+	border: 2px solid var(--db-main);
+	opacity: 1 !important;
+	background-color: white !important;
+	z-index: 5 !important;
+	-webkit-box-shadow: 2px 2px 0px 2px var(--db-main);
+	-moz-box-shadow: 2px 2px 0px 2px var(--db-main);
+	box-shadow: 2px 2px 2px 0px var(--db-main);
+}
+
+.h5p-tag-demokratie .sequencing-item:hover {
+	border: solid 2px var(--db-main);
+}
+
+.h5p-tag-demokratie .sequencing-dropzone {
+	background: #FFEAC7;
+	border-color: var(--db-light);
+}
+
+.h5p-tag-demokratie .h5p-blanks .h5p-text-input:focus {
+	outline: none;
+	box-shadow: 0 0 0.1em 0 var(--db-main);
+	border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .joubel-icon-tip-normal .h5p-icon-speech-bubble:before {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-interaction-button .nav-button {
+	background: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interaction-button .nav-button:active {
+	background: var(--db-dark) !important;
+	border-color: var(--db-light) !important;
+}
+
+.h5p-tag-demokratie .h5p-interaction-button .nav-button:hover {
+	background: var(--db-dark) !important;
+}
+
+.h5p-tag-demokratie .hud-btn {
+	background: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-memory-reset {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-memory-reset:hover,
+.h5p-tag-demokratie .h5p-memory-reset:focus {
+  background: var(--db-dark);
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav-background .timenav-line {
+	background-color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker.active .flag .flag-content h3,
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker.active .flag-small .flag-content h3 {
+  color: var(--db-main) !important;
+  font-family: 'Inconsolata';
+}
+
+.h5p-tag-demokratie .vco-notouch .vco-navigation .timenav .content .marker .flag:hover {
+	color: var(--db-main) !important;
+}
+
+.vco-timeline .vco-navigation .timenav .content .marker.active .dot{
+	background: var(--db-dark) !important;
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker.active .line .event-line {
+	background: var(--db-main);
+}
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav .content .marker .dot {
+	background: var(--db-dark);
+}
+
+.h5p-tag-demokratie .h5p-blankTable .h5p-text-input:focus {
+	box-shadow: 0 0 0.5em 0 var(--db-main);
+	border-color: var(--db-main)50;
+}
+
+.h5p-tag-demokratie .joubel-simple-rounded-button{
+	background-color: var(--db-main);
+}
+
+
+.h5p-tag-demokratie .joubel-simple-rounded-button:hover, .joubel-simple-rounded-button:focus {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .joubel-simple-rounded-button:active {
+	background-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-documentation-tool .h5p-navigation-menu .h5p-navigation-menu-entry:hover {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-documentation-tool .h5p-navigation-menu .h5p-navigation-menu-entry.current {
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-documentation-tool .h5p-navigation-menu .h5p-navigation-menu-entry.current:before {
+	box-shadow: 0 0 0 5px var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-documentation-tool .h5p-navigation-menu .h5p-navigation-menu-entry:hover:before {
+	box-shadow: 0 0 0 5px var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-documentation-tool-page .page-help-text {
+    color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-summary .summary-container li:not(:last-child) {
+	border-bottom: 2px solid var(--db-main);
+	border-radius: 0;
+}
+
+.h5p-tag-demokratie .h5p-summary .h5p-panel:not(.panel-disabled) .summary-claim-unclicked:hover {
+	border-color: var(--db-main);
+    background: #ffffff;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-progressbar-front {
+	background-color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-progress-number {
+	color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-arrow .navigation-button {
+	color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-menu .icon-menu {
+	color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie.h5p-interactive-book-navigation-maintitle {
+	background-color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
+	color: var(--db-main) !important;
+	font-family: 'Montserrat' !important;
+	font-weight: 600 !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-fullscreen.h5p-interactive-book-enter-fullscreen::before {
+	color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-interactive-book-status-menu.h5p-interactive-book-status-menu-active {
+	background-color: var(--db-main) !important;
+}
+
+.h5p-tag-demokratie .h5p-multi-media-choice .h5p-multi-media-choice-enabled:hover:not(.h5p-multi-media-choice-selected) {
+    border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-multi-media-choice .h5p-multi-media-choice-selected {
+    border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-multi-media-choice .h5p-multi-media-choice-list-item:focus .h5p-multi-media-choice-enabled {
+    box-shadow: 0 0 4px 2px var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-multi-media-choice .h5p-multi-media-choice-show-correct {
+    border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-multi-media-choice .h5p-multi-media-choice-show-correct:before {
+    color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-sort-paragraphs .h5p-sort-paragraphs-button {
+    background-color: #fff;
+    border: 2px solid #80808026;
+    color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-sort-paragraphs .h5p-sort-paragraphs-button:not(.h5p-sort-paragraphs-disabled):hover {
+    background-color: #ffffff;
+    border-color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-sort-paragraphs .h5p-sort-paragraphs-button {
+    color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph.h5p-sort-paragraphs-selected{
+	background: rgba(var(--db-main),40);
+  	border-color: var(--db-main);
+	color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-sort-paragraphs .h5p-sort-paragraphs-paragraph-placeholder{
+	background-color: rgba(var(--db-main),40);
+	border:.25em dashed var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-crossword .h5p-crossword-input-fields-group-wrapper-clue .h5p-crossword-input-fields-group-clue-content .h5p-crossword-input-fields-group-extra-clue {
+    color: var(--db-main);
+}
+
+.h5p-tag-demokratie .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
+    border-color: var(--db-main);
+    box-shadow: 0 0 0.2em 0.1em var(--db-main);
+}
