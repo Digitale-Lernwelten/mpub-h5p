@@ -88,10 +88,10 @@
 
 /*Everything that contains a specific font instruction*/
 
-body.dbhessen .html.h5p-iframe,
+/*body.dbhessen .html.h5p-iframe,
 html.h5p-iframe > body {
   font-family: 'Inconsolata';
-}
+} */
 
 body.dbhessen  {
   font-family: 'Inconsolata' !important;
