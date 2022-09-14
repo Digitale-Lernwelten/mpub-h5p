@@ -1,4 +1,4 @@
-
+@import "demokratiebildung.css" layer(theme);
 /*Color variables for different projects*/
 
 :root {
@@ -3177,5 +3177,3 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
 .h5p-tag-juramuseum .h5p-memory-reset {
   background: var(--dlw-jura);
 }
-
-@import 'demokratiebildung.css';
