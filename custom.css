@@ -1697,6 +1697,7 @@ body.lasub .h5p-true-false-answer[aria-checked=true] {
 
 .h5p-image-hotspot-popup-body {
   padding: 0.5em;
+  padding-right: 2em;
 }
 
 .h5p-image-hotspot-popup-body > * {
