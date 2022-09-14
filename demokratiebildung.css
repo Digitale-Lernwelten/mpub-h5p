@@ -363,7 +363,7 @@ body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-wrong,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
-  background-color: rgba(var(--db-red),80);
+  background-color: rgba(229, 51, 66, 0.973);
   filter: grayscale(1);
 }
 
