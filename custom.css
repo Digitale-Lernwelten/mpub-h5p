@@ -1,4 +1,3 @@
-@import 'demokratiebildung.css';
 
 /*Color variables for different projects*/
 
@@ -2549,7 +2548,7 @@ body.lasub .vco-timeline .vco-navigation .timenav-background .timenav-line {
 }
 
 .vco-timeline .vco-navigation .timenav-background .timenav-interval-background {
-  background: #DEE8F0 !important;
+  background: white !important;
 }
 
 body.lasub .vco-timeline .vco-navigation .timenav-background .timenav-interval-background {
@@ -3179,3 +3178,4 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
   background: var(--dlw-jura);
 }
 
+@import 'demokratiebildung.css';

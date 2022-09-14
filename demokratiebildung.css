@@ -1,9 +1,9 @@
 :root {
-	--db-main: rgba(179, 72, 150,1);
-	--db-light: rgba(209, 145, 192,1);
-	--db-dark: rgba(134, 54, 113,1);
-	--db-green: rgba(74, 246, 182,1);
-	--db-red: rgba(229, 51, 65,1);
+	--db-main: rgb(179, 72, 150);
+	--db-light: rgb(209, 145, 192);
+	--db-dark: rgb(134, 54, 113);
+	--db-green: rgb(74, 246, 182);
+	--db-red: rgb(229, 51, 65);
 }
 
 @font-face {
@@ -1238,6 +1238,6 @@ body.dbhessen .vco-timeline .vco-navigation .timenav-background .timenav-interva
 }
 
 body.dbhessen .h5p-image-juxtaposition-image .h5p-image-juxtaposition-label {
-	background-color: rgba(var(--db-main),70);
+	background-color: #b34896ad; /*doesn't work with rgba and variable*/
 }
 
