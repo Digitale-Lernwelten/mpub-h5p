@@ -18,6 +18,16 @@ const hotSpotFix = () => {
 
 window.addEventListener("load", hotSpotFix);
 
+const referrerToClass = ref => {
+	const refClassMapping = {
+		"vorschau.test-dilewe.de": "dbhessen",
+
+		"redaktionsvorschau.lasub.dilewe.de": "lasub",
+		"module-sachsen.dilewe.de": "lasub",
+		"lasub.staging.test-dilewe.de": "lasub",
+	};
+	return refClassMapping[ref] || "unknown";
+};
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.setAttribute("iframe-referrer", String(document.referrer).split("/")[2]); 
+	document.body.classList.add(referrerToClass(String(document.referrer).split("/")[2]));
 }, false); 
