@@ -1172,7 +1172,16 @@ body.lasub .h5p-dragquestion .h5p-my-fullscreen-button-exit {
   color: var(--dlw-lasub-main);
 }
 
-.h5p-dragquestion .h5p-dropped.h5p-correct,
+.h5p-draggable .ui-draggable .ui-draggable-handle .h5p-advanced-text .h5p-dropped .ui-draggable-disabled .h5p-correct{
+	background-color: rgb(182 228 206 / 80%);
+}
+
+.h5p-draggable .ui-draggable .ui-draggable-handle .h5p-advanced-text .h5p-dropped .ui-draggable-disabled .h5p-wrong {
+	background-color: rgb(247 208 208 / 80%);
+	filter: grayscale(1);
+}
+
+/*.h5p-dragquestion .h5p-dropped.h5p-correct,
 .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
   background-color: rgb(182 228 206 / 80%);
 }
@@ -1181,7 +1190,7 @@ body.lasub .h5p-dragquestion .h5p-my-fullscreen-button-exit {
 .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
   background-color: rgb(247 208 208 / 80%);
   filter: grayscale(1);
-}
+} */
 
 /* Flashcards */
 .h5p-flashcards {
