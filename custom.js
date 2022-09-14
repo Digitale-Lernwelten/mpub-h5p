@@ -17,3 +17,5 @@ const hotSpotFix = () => {
 }
 
 window.addEventListener("load", hotSpotFix);
+
+document.body.setAttribute("iframe-referrer", String(document.referrer).split("/")[2]); 

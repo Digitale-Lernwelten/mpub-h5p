@@ -1228,3 +1228,12 @@ html.h5p-iframe > body {
     border-color: var(--db-main);
     box-shadow: 0 0 0.2em 0.1em var(--db-main);
 }
+
+.h5p-tag-demokratie .vco-timeline .vco-navigation .timenav-background .timenav-interval-background {
+	background: #fff;
+}
+
+.h5p-tag-demokratie .h5p-image-juxtaposition-image .h5p-image-juxtaposition-label {
+	background-color: rgba(var(--db-main),70);
+}
+
