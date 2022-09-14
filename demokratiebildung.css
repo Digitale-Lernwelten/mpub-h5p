@@ -357,12 +357,13 @@ body.dbhessen .h5p-true-false-answer.wrong:after {
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-correct,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
-  background-color: #4af6b6db;
+	border-color: var(--db-green);
+  	background-color: var(--db-green);
 }
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-wrong,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
-  background-color: #e53341e3;
+  background-color: rgba(var(--db-red),80);
   filter: grayscale(1);
 }
 
