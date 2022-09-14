@@ -2,7 +2,7 @@
 	--db-main: rgb(179, 72, 150);
 	--db-light: rgb(209, 145, 192);
 	--db-dark: rgb(134, 54, 113);
-	--db-green: rgb(74, 246, 182);
+	--db-green: rgb(75, 247, 184);
 	--db-red: rgb(229, 51, 65);
 }
 
@@ -357,12 +357,12 @@ body.dbhessen .h5p-true-false-answer.wrong:after {
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-correct,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
-  background-color: rgba(var(--db-green),80);
+  background-color: #4af6b6db;
 }
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-wrong,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
-  background-color: rgba(var(--db-red),80);
+  background-color: #e53341e3;
   filter: grayscale(1);
 }
 
@@ -1104,7 +1104,6 @@ body.dbhessen .h5p-blankTable .h5p-text-input:focus {
 body.dbhessen .joubel-simple-rounded-button{
 	background-color: var(--db-main);
 }
-
 
 body.dbhessen .joubel-simple-rounded-button:hover, .joubel-simple-rounded-button:focus {
 	background-color: var(--db-main);
