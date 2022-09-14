@@ -363,9 +363,9 @@ body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
 
 body.dbhessen .h5p-dragquestion .h5p-dropped.h5p-wrong,
 body.dbhessen .h5p-dragquestion .h5p-dropzone.h5p-wrong-answer {
-  background-color: var(--db-red);
-  border-color: var(--db-red);
-  filter: grayscale(0.5);
+  background-color: rgb(247 208 208 / 80%);
+  border-color: rgb(247 208 208 / 80%);
+  filter: grayscale(1);
 }
 
 body.dbhessen .h5p-flashcards .h5p-card.h5p-correct .h5p-imageholder>.h5p-flashcard-overlay {
@@ -768,7 +768,9 @@ body.dbhessen .h5p-drag-text [aria-grabbed].h5p-drag-dropped {
 	color: black;
 }
 
-body.dbhessen .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover {
+body.dbhessen .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover, 
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct), 
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct):not(.h5p-wrong) {
 	background-color: white;
 	border: solid 1.5px;
 	border-color: var(--db-main);
