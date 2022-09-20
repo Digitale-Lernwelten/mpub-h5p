@@ -645,7 +645,7 @@ body.dbhessen .h5p-end-button,
 body.dbhessen .h5p-nav-button {
   border-color: var(--db-main);
   color: var(--db-main);
-  font-family: Montserrat;
+  font-family: Inconsolata;
   border-radius: .8rem;
 }
 
@@ -668,7 +668,7 @@ body.dbhessen .h5p-nav-button:active {
 body.dbhessen .h5p-branching-scenario .h5p-branching-question button {
 	background-color: white;
 	border-color: var(--db-main);
-	font-family: Montserrat;
+	font-family: Inconsolata;
 	color: var(--db-main);
 	border-radius: .8rem;
 }
@@ -782,7 +782,7 @@ body.dbhessen .h5p-dragquestion .h5p-my-fullscreen-button-exit {
 }
 
 body.dbhessen .h5p-flashcards .h5p-answer .h5p-button {
-	font-family: 'Montserrat';
+	font-family: 'Inconsolata';
 	background: var(--db-main);
 }
 
@@ -1169,7 +1169,7 @@ body.dbhessen .h5p-interactive-book-status-menu .icon-menu {
 
 body.dbhessen .h5p-interactive-book-navigation-chapter-button .h5p-interactive-book-navigation-chapter-title-text {
 	color: var(--db-main) !important;
-	font-family: 'Montserrat' !important;
+	font-family: 'Inconsolata' !important;
 	font-weight: 600 !important;
 }
 
