@@ -439,6 +439,14 @@ body.lasub .progress-dot.answered {
     background: var(--dlw-lasub-light);
 }
 
+body.lasub .progress-dot{
+	border: var(--dlw-lasub-main);
+}
+
+body.lasub .progress-dot.current:before {
+    border-color: var(--dlw-lasub-main);
+}
+
 /*Fragentext*/
 .h5p-question-introduction {
   margin: 1em;
