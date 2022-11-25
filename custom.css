@@ -2404,6 +2404,10 @@ body.lasub .sequencing-dropzone {
   display: none;
 }
 
+.h5p-image-sequencing .sequencing-item .image-container img {
+  object-fit: cover;
+}
+
 /*Fill in the blanks*/
 .h5p-blanks .h5p-text-input {
   font-family: 'Montserrat', sans-serif;
