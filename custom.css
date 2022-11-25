@@ -2409,6 +2409,7 @@ body.lasub .sequencing-dropzone {
 }
 
 .h5p-image-sequencing .sequencing-item .image-container img {
+  width: auto;
   left: 50%;
   transform: translate(-50%, -50%);
 }
