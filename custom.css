@@ -2404,8 +2404,13 @@ body.lasub .sequencing-dropzone {
   display: none;
 }
 
+.h5p-image-sequencing .sequencing-item .image-container {
+  overflow: hidden;
+}
+
 .h5p-image-sequencing .sequencing-item .image-container img {
-  object-fit: cover;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*Fill in the blanks*/
