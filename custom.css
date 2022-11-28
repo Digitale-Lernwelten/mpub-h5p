@@ -3278,6 +3278,7 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
   --dlw-blue: rgb(196, 20, 27);
 }
 
+.h5p-tag-cbm .h5p-course-presentation p,
 html.h5p-iframe > body .h5p-tag-cbm {
   font-family: "Source Sans Pro";
 }
