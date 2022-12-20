@@ -3221,6 +3221,10 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
     display: none;
 }
 
+#fullscreen-button-1644{
+	display:none;
+}
+
 
 /* *************************************************************** */
 /* HERE STARTS THE CUSTOM PART FOR THE JURA MUSEUM WITH OVERRRIDES */
