@@ -22,7 +22,7 @@ const referrerToClass = ref => {
 	const refClassMapping = {
 		"vorschau.test-dilewe.de": "dbhessen",
 		"demokratie-bildung-hessen.de": "dbhessen",
-		"bm.dilewe.de": "dbhessen",
+		"archiv-buergerbewegung-leipzigx.test-dilewe.de": "dbhessen",
 		
 		"redaktionsvorschau.lasub.dilewe.de": "lasub",
 		"module-sachsen.dilewe.de": "lasub",
