@@ -379,6 +379,10 @@ body.lasub .h5p-question-feedback {
 	transition: max-height 0.15s ease, margin-top 0.15s ease, margin-bottom 0.15s ease, opacity 0.15s cubic-bezier(0, 1, 0, 1);
 }
 
+body.lasub .h5p-question-feedback.h5p-question-visible {
+  opacity: 1;
+}
+
 /*Scorebar am Ende eines QuestionSets*/
 .h5p-joubelui-score-bar-progress {
   background: var(--dlw-blue);
