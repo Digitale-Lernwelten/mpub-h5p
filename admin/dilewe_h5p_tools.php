@@ -28,7 +28,7 @@ function getExportRender() {
 	}
 
 	?>
-	
+
 	<h4><?php echo $name;?></h4>
 	<textarea readonly style="width: 50vw; height: 400px"><?php
 		echo htmlspecialchars(json_encode($result, JSON_PRETTY_PRINT));
@@ -39,5 +39,5 @@ function getExportRender() {
 
 function getAllH5PContent() {
 	global $wpdb;
-    return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents LIMIT 50", ARRAY_A);
+    return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents", ARRAY_A);
 }
