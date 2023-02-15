@@ -21,36 +21,37 @@ function getExportRender() {
 	$name = $_REQUEST['verb'];
 	if ($name != "Export") { return;}
 	
-	$result = getAllH5PContent();
+	$result = getAllEMRContent();
 
 	foreach($result as &$o){
 		$o['parameters'] = json_decode($o['parameters'],true);
 	}
 
-	$data = htmlspecialchars(json_encode($result, JSON_PRETTY_PRINT));
-
-	$file = "export.json";
-	$txt = fopen($file, "w") or die("Unable to open file");
-	fwrite($txt, $data);
-	fclose($txt);
-
-	header('Content-Description: File Transfer');
-	header('Content-Disposition: attachment; filename='.basename($file));
-	header('Expires: 0');
-	header('Cache-Control: must-revalidate');
-	header('Pragma: public');
-	header('Content-Length: ' . filesize($file));
-	header("Content-Type: text/plain");
-	readfile($file);
+	$data =  gzencode(json_encode($result, JSON_PRETTY_PRINT));
 
 	?>
 
-	<h4>datei wird zum herunterladen erstellt, einen Augenblick</h4>
+	<h4>datei download</h4>
+	<a href="data:application/json;base64,<?php echo base64_encode($data);?>" download="data.json.gz">Download</a>
 
 	<?php
+	
+
+	
 }
 
 function getAllH5PContent() {
 	global $wpdb;
     return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents", ARRAY_A);
+}
+
+
+function getAllEMRContent() { 
+	global $wpdb;
+    return $wpdb->get_results(
+		"SELECT wp_h5p_contents.id, wp_h5p_contents.title, wp_h5p_contents.slug, wp_h5p_contents.parameters
+		FROM wp_h5p_tags
+		LEFT JOIN wp_h5p_contents_tags ON wp_h5p_contents_tags.tag_id = wp_h5p_tags.id
+		INNER JOIN wp_h5p_contents ON wp_h5p_contents.id = wp_h5p_contents_tags.content_id
+		WHERE wp_h5p_tags.name = 'emr'", ARRAY_A);
 }
