@@ -45,7 +45,7 @@ const FullScreenToggler = () => {
 		btnFullscreen.onclick = e => {
 			e.preventDefault();
 			e.stopPropagation();
-			openFullScreen(h5pContainer);
+			openFullScreen(document.body);
 		}
 	}
 }

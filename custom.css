@@ -315,6 +315,12 @@ body.lasub .h5p-joubelui-button:focus {
   transition: initial;
 }
 
+/*Fullscreen Button*/
+body:fullscreen img.hotspot-image {
+  max-height: 100vh !important;
+  width: auto !important;
+}
+
 /*Interaction Button*/
 .h5p-interactive-video div:hover>.h5p-interaction-button {
   background-color: var(--dlw-blue);
