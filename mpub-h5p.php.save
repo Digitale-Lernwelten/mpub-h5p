@@ -10,7 +10,6 @@ License:     GPL2 etc
 License URI: http://link to your plugin license
 */
 
-
 function h5p_mpub_alter_styles(&$styles, $libraries, $embed_type) {
   $styles[] = (object) array(
     // Path must be relative to wp-content/uploads/h5p or absolute.
@@ -29,8 +28,12 @@ function h5p_mpub_alter_scripts(&$scripts, $libraries, $embed_type) {
 }
 add_action('h5p_alter_library_scripts', 'h5p_mpub_alter_scripts', 10, 3);
 
-require('admin/dilewe_h5p_tools.php');
-add_action ('admin_menu', function () {
-	add_management_page('Dilewe H5P Tools', 'Dilewe H5P Tools', 'install_plugins', 'dilewe_h5p_tools', 'dilewe_h5p_tools_render', '');
+// admin menu
+add_action ('ecenu', function () {
+	add_management_page('Some page title', 'Title in the menu', 'install_plugins', 'some_unique_string', 'my_custom_page_render_function', '');
 });
 
+function my_custom_page_render_function()
+{
+	echo 'This is content of the page';
+}

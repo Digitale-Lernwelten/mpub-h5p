@@ -315,6 +315,12 @@ body.lasub .h5p-joubelui-button:focus {
   transition: initial;
 }
 
+/*Fullscreen Button*/
+body:fullscreen img.hotspot-image {
+  max-height: 100vh !important;
+  width: auto !important;
+}
+
 /*Interaction Button*/
 .h5p-interactive-video div:hover>.h5p-interaction-button {
   background-color: var(--dlw-blue);
@@ -377,6 +383,10 @@ body.lasub .h5p-question-feedback {
 	max-height: 0;
 	opacity: 0;
 	transition: max-height 0.15s ease, margin-top 0.15s ease, margin-bottom 0.15s ease, opacity 0.15s cubic-bezier(0, 1, 0, 1);
+}
+
+body.lasub .h5p-question-feedback.h5p-question-visible {
+  opacity: 1;
 }
 
 /*Scorebar am Ende eines QuestionSets*/
