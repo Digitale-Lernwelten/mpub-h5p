@@ -62,7 +62,7 @@ const referrerToClass = ref => {
 		"redaktionsvorschau.lasub.dilewe.de": "lasub",
 		"module-sachsen.dilewe.de": "lasub",
 		"lasub.staging.test-dilewe.de": "lasub",
-		"orschau-netbook.dilewe.de": "netbook",
+		"vorschau-netbook.dilewe.de": "netbook",
 
 	};
 	return refClassMapping[ref] || "unknown";
