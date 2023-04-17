@@ -21,8 +21,22 @@ function dilewe_h5p_tools_render()
     <input type="submit" name="verb" value="Export" />
 </form>
 
+<br/>
+<h4>Import</h4>
+<p>kopiere die dateien in den "ornder"</p>
+
+<form method="POST" action="<?php echo admin_url( 'tools.php?page=dilewe_h5p_tools' ); ?>" enctype="multipart/form-data">
+	<select id="language" name="language">
+		<option value="fr">Französisch</option>
+		<option value="nl">Niederländisch</option>
+	</select>
+	<input name="uploadedfiles[]" type="file" multiple="multiple" accept="application/json">
+	<input type="submit" name="importsubmit" value="Import" />
+</form>
+
 <?php
 getExportRender();
+getFolder();
 ?>
 
 <?php
@@ -53,6 +67,114 @@ function getExportRender() {
 	<?php	
 }
 
+function get_h5p_content_by_id($id){
+	global $wpdb;
+    return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE id = {$id}", ARRAY_A);
+}
+
+function get_h5p_content_by_slug($slug){
+	global $wpdb;
+    return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE slug = '{$slug}'", ARRAY_A);
+}
+
+function get_h5p_content_tags($id){
+	global $wpdb;
+	return $wpdb->get_results("SELECT * FROM {$wpdb->prefix}h5p_contents_tags WHERE content_id = '{$id}'", ARRAY_A);
+}
+
+function insert_empty_h5p_translation($original_data, $language) {
+	global $wpdb;
+	$original_data['slug'] = $original_data['slug']."_".$language;
+	$original_data['default_language'] = $language;
+	unset($original_data['id']);
+	$wpdb->insert("{$wpdb->prefix}h5p_contents", $original_data);
+}
+
+
+
+function import_translation($data, $language = "fr") {
+	global $wpdb;
+	$original_data = get_h5p_content_by_id($data['id']);
+	if(!$original_data){
+		echo "<h1>Couldn't find original H5P content for " . $data['id'] . "</h1>";
+		throw new Exception("Couldn't find original H5P content for " . $data['id']);
+	}
+
+	$translated_data = get_h5p_content_by_slug($data['slug']."_".$language);
+	if(!$translated_data){
+		insert_empty_h5p_translation($original_data, $language);
+		$translated_data = get_h5p_content_by_slug($data['slug']."_".$language);
+		if(!$translated_data){
+			echo "<h1>Couldn't create empty h5p translation for " . $data['id'] . "</h1>";
+			throw new Exception("Couldn't create empty h5p translation for " . $data['id']);
+		}
+	}
+	$translated_data['title'] = $data['title'];
+	$translated_data['parameters'] = json_encode($data['parameters']);
+	$translated_data['filtered'] = $translated_data['parameters'];
+
+	$oldtags = get_h5p_content_tags($data['id']);
+	$newtags = get_h5p_content_tags($translated_data['id']);
+	foreach ($oldtags as $oldtag) {
+		global $checktag;
+		$checktag = true;
+		foreach ($newtags as $newtag) {
+			echo "oldtag: " . $oldtag["tag_id"] . "newtag :" . $newtag["tagid"];
+			echo json_encode($oldtag["tag_id"] == $newtag["tagid"]);
+			if ($oldtag["tag_id"] == $newtag["tagid"]) {
+				$checktag = false;
+			}
+		}
+
+		echo "check" . $checktag;
+		if ($checktag) {
+			global $wpdb;
+			$wpdb->insert("{$wpdb->prefix}h5p_contents_tags", array("content_id" => $translated_data['id'], "tag_id" => $oldtag["tag_id"]));
+		}
+	}
+
+	// also copy the asset folder to the new content path
+	$uploadedPath = dirname(__DIR__, 3) . "/uploads/h5p/content/";
+	recurse_copy_dir($uploadedPath . $original_data['id'], $uploadedPath . $translated_data['id']);
+	
+	$wpdb->update("{$wpdb->prefix}h5p_contents", $translated_data, ["id" => $translated_data['id']]);
+}
+
+function getFolder() {
+	if ($_SERVER["REQUEST_METHOD"] != "POST") { return;}
+	// if (!$_REQUEST['files']) { return;}
+	if (!$_REQUEST['importsubmit']) { return;}
+	if (!$_REQUEST['language']) { return;}
+	if(isset($_POST['importsubmit'])){
+
+		foreach($_FILES["uploadedfiles"]['tmp_name'] as $file){
+			$json = file_get_contents($file);
+			$data = json_decode($json, true);
+			unlink($file);
+			import_translation($data);
+			echo "<pre>";
+			print_r(json_encode($data, JSON_PRETTY_PRINT));
+			echo "</pre>";
+		}
+	}
+	?>
+	<?php
+}
+
+function getFileUploads($path = "/tmp") {
+	$target_dir = "/uploads";
+	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+	$files = array_values(array_diff(scandir(__DIR__ .$path), array('.', '..')));
+	if (is_dir($path)) {
+		if ($dh = opendir($path)) {
+			while (($file = readdir($dh)) !== false) {
+				echo "filename: .".$file."<br />";
+			}
+			closedir($dh);
+		}
+	}
+}
+
 function getAllH5PContent() {
 	global $wpdb;
     return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents", ARRAY_A);
@@ -67,4 +189,21 @@ function getAllTagContent( $tag = "emr") {
 		LEFT JOIN wp_h5p_contents_tags ON wp_h5p_contents_tags.tag_id = wp_h5p_tags.id
 		INNER JOIN wp_h5p_contents ON wp_h5p_contents.id = wp_h5p_contents_tags.content_id
 		WHERE wp_h5p_tags.name = '{$tag}'", ARRAY_A);
+}
+
+function recurse_copy_dir($src,$dst) { 
+    $dir = opendir($src);
+    @mkdir($dst, 01774);
+	chmod($dst, 01774);
+    while(false !== ( $file = readdir($dir)) ) { 
+        if (( $file != '.' ) && ( $file != '..' )) { 
+            if ( is_dir($src . '/' . $file) ) { 
+                recurse_copy_dir($src . '/' . $file,$dst . '/' . $file); 
+            } 
+            else { 
+                copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+        } 
+    } 
+    closedir($dir); 
 }
