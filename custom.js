@@ -22,8 +22,8 @@ const openFullScreen = elem => {
 	} else if (elem.webkitRequestFullscreen) {
 		elem.webkitRequestFullscreen();
 	} else if (elem.msRequestFullscreen) {
-    	elem.msRequestFullscreen();
-  	}
+		elem.msRequestFullscreen();
+	}
 }
 
 const FullScreenToggler = () => {
@@ -58,21 +58,30 @@ const referrerToClass = ref => {
 		"vorschau.test-dilewe.de": "dbhessen",
 		"demokratie-bildung-hessen.de": "dbhessen",
 		"archiv-buergerbewegung-leipzigx.test-dilewe.de": "dbhessen",
-		
+
 		"redaktionsvorschau.lasub.dilewe.de": "lasub",
 		"module-sachsen.dilewe.de": "lasub",
 		"lasub.staging.test-dilewe.de": "lasub",
-		
+
 		"vorschau-netbook.dilewe.de": "netbook",
 		"h5p-netbook.test-dilewe.de": "netbook",
 
 	};
 	return refClassMapping[ref] || "unknown";
 };
+
 document.addEventListener("DOMContentLoaded", () => {
 	document.body.classList.add(referrerToClass(String(document.referrer).split("/")[2]));
+}, false);
 
-	H5P.externalDispatcher.on('xAPI', function (event) {
-  		console.log(event.data);
+H5P.externalDispatcher.on('xAPI', function (event) {
+	const data = JSON.stringify(event, null, 2);
+	const parentUrl = (window.location !== window.parent.location)
+		? document.referrer
+		: document.location.href;
+	if(parentUrl !== "") {
+		window.parent.postMessage(data, parentUrl);
+	} else {
+		console.warn("Empty parentUrl: ", parentUrl);
+	}
 });
-}, false); 
