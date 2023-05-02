@@ -82,6 +82,11 @@ function get_h5p_content_tags($id){
 	return $wpdb->get_results("SELECT * FROM {$wpdb->prefix}h5p_contents_tags WHERE content_id = '{$id}'", ARRAY_A);
 }
 
+function get_h5p_content_tag_name($tagname){
+	global $wpdb;
+	return $wpdb->get_results("SELECT * FROM {$wpdb->prefix}h5p_tags WHERE name = '{$tagname}'", ARRAY_A);
+}
+
 function insert_empty_h5p_translation($original_data, $language) {
 	global $wpdb;
 	$original_data['slug'] = $original_data['slug']."_".$language;
@@ -115,23 +120,39 @@ function import_translation($data, $language = "fr") {
 
 	$oldtags = get_h5p_content_tags($data['id']);
 	$newtags = get_h5p_content_tags($translated_data['id']);
+	$langtag = get_h5p_content_tag_name("lang_" . $language);
+
+	// echo "oldtags: " . json_encode($oldtags, JSON_PRETTY_PRINT) . " --- " . "newtags: " . json_encode($newtags, JSON_PRETTY_PRINT);
+	global $checklang;
+	$checklang = true;
+
 	foreach ($oldtags as $oldtag) {
 		global $checktag;
 		$checktag = true;
 		foreach ($newtags as $newtag) {
-			echo "oldtag: " . $oldtag["tag_id"] . "newtag :" . $newtag["tagid"];
-			echo json_encode($oldtag["tag_id"] == $newtag["tagid"]);
-			if ($oldtag["tag_id"] == $newtag["tagid"]) {
+			if ($oldtag["tag_id"] == $newtag["tag_id"]) {
 				$checktag = false;
 			}
 		}
 
-		echo "check" . $checktag;
+		if ($langtag[0]) {
+			if ($langtag[0]["id"] == $oldtag["tag_id"]) {
+				$checklang = false;
+			}
+		}
+
+
 		if ($checktag) {
 			global $wpdb;
 			$wpdb->insert("{$wpdb->prefix}h5p_contents_tags", array("content_id" => $translated_data['id'], "tag_id" => $oldtag["tag_id"]));
 		}
 	}
+	
+	if ($checklang) {
+		global $wpdb;
+		$wpdb->insert("{$wpdb->prefix}h5p_contents_tags", array("content_id" => $translated_data['id'], "tag_id" => $langtag[0]["id"]));
+	}
+
 
 	// also copy the asset folder to the new content path
 	$uploadedPath = dirname(__DIR__, 3) . "/uploads/h5p/content/";
@@ -151,10 +172,10 @@ function getFolder() {
 			$json = file_get_contents($file);
 			$data = json_decode($json, true);
 			unlink($file);
-			import_translation($data);
-			echo "<pre>";
-			print_r(json_encode($data, JSON_PRETTY_PRINT));
-			echo "</pre>";
+			import_translation($data, $_REQUEST['language']);
+			// echo "<pre>";
+			// print_r(json_encode($data, JSON_PRETTY_PRINT));
+			// echo "</pre>";
 		}
 	}
 	?>
