@@ -71,4 +71,8 @@ const referrerToClass = ref => {
 };
 document.addEventListener("DOMContentLoaded", () => {
 	document.body.classList.add(referrerToClass(String(document.referrer).split("/")[2]));
+
+	H5P.externalDispatcher.on('xAPI', function (event) {
+  		console.log(event.data);
+});
 }, false); 
