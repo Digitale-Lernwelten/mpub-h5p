@@ -118,6 +118,8 @@ function import_translation($data, $language = "fr") {
 	$translated_data['parameters'] = json_encode($data['parameters']);
 	$translated_data['filtered'] = $translated_data['parameters'];
 
+	echo $translated_data['parameters'] . "--test1213";
+
 	$oldtags = get_h5p_content_tags($data['id']);
 	$newtags = get_h5p_content_tags($translated_data['id']);
 	$langtag = get_h5p_content_tag_name("lang_" . $language);
@@ -156,7 +158,11 @@ function import_translation($data, $language = "fr") {
 
 	// also copy the asset folder to the new content path
 	$uploadedPath = dirname(__DIR__, 3) . "/uploads/h5p/content/";
-	recurse_copy_dir($uploadedPath . $original_data['id'], $uploadedPath . $translated_data['id']);
+	try {
+		recurse_copy_dir($uploadedPath . $original_data['id'], $uploadedPath . $translated_data['id']);
+	} catch (\Throwable $th) {
+		echo "Fehler: " . $th->getMessage() . "\n";
+	}
 	
 	$wpdb->update("{$wpdb->prefix}h5p_contents", $translated_data, ["id" => $translated_data['id']]);
 }
