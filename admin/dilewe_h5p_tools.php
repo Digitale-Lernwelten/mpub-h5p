@@ -124,9 +124,28 @@ function import_translation($data, $language = "fr") {
 	$newtags = get_h5p_content_tags($translated_data['id']);
 	$langtag = get_h5p_content_tag_name("lang_" . $language);
 
+	if (is_null($oldtags)) {
+		echo "import error";
+		print_r($data);
+		return;
+	}
+
+	if (is_null($newtags)) {
+		echo "import error";
+		print_r($data);
+		return;
+	}
+
+	if (count($langtag) == 0) {
+		echo "import error";
+		print_r($data);
+		return;
+	}
+
 	// echo "oldtags: " . json_encode($oldtags, JSON_PRETTY_PRINT) . " --- " . "newtags: " . json_encode($newtags, JSON_PRETTY_PRINT);
 	global $checklang;
 	$checklang = true;
+
 
 	foreach ($oldtags as $oldtag) {
 		global $checktag;
@@ -158,11 +177,14 @@ function import_translation($data, $language = "fr") {
 
 	// also copy the asset folder to the new content path
 	$uploadedPath = dirname(__DIR__, 3) . "/uploads/h5p/content/";
+
+	recurse_copy_dir($uploadedPath . $original_data['id'], $uploadedPath . $translated_data['id']);
+	/*
 	try {
 		recurse_copy_dir($uploadedPath . $original_data['id'], $uploadedPath . $translated_data['id']);
 	} catch (\Throwable $th) {
 		echo "Fehler: " . $th->getMessage() . "\n";
-	}
+	}*/
 	
 	$wpdb->update("{$wpdb->prefix}h5p_contents", $translated_data, ["id" => $translated_data['id']]);
 }
@@ -220,6 +242,9 @@ function getAllTagContent( $tag = "emr") {
 
 function recurse_copy_dir($src,$dst) { 
     $dir = opendir($src);
+	if (!$dir) {
+		return;
+	}
     @mkdir($dst, 01774);
 	chmod($dst, 01774);
     while(false !== ( $file = readdir($dir)) ) { 
@@ -232,5 +257,5 @@ function recurse_copy_dir($src,$dst) {
             } 
         } 
     } 
-    closedir($dir); 
+    closedir($dir);
 }
