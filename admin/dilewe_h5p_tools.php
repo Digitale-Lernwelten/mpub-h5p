@@ -85,7 +85,7 @@ function getExportSystemXRender() {
 	$data = getSystemXH5PContent();
 
 	?>
-	<a href="data:text/xml;base64,<?php echo base64_encode($data);?>" download="data.xml">Download</a>
+	<a href="data:application/json;base64,<?php echo base64_encode($data);?>" download="embeddings.json">Download</a>
 	<?php
 }
 
@@ -274,20 +274,14 @@ function getSystemXH5PContent() {
 		}
 	}
 
-	$ret = "<EmbedTranslations>\n";
-	foreach($map as $rawTitle => $m){
-		$title = htmlspecialchars($rawTitle);
-		$args = [];
+	$out = [];
+	foreach($map as $title => $m){
 		if(count($m) <= 1){
 			continue;
 		}
-		foreach($m as $lang => $id) {
-			$args[] = "$lang=$id";
-		}
-		$ret .= "  <Translation title=\"$title\" ".implode(" ",$args)."/>\n";
+		$out[$title] = $m;
 	}
-	$ret .= "</EmbedTranslations>\n";
-	return $ret;
+	return json_encode($out, JSON_PRETTY_PRINT);
 }
 
 function recurse_copy_dir($src,$dst) {
