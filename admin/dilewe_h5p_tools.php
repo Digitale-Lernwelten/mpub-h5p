@@ -18,12 +18,12 @@ function dilewe_h5p_tools_render()
 	<option value="juramuseum">Juramuseum</option>
 	<option value="DAZ">DAZ</option>
 	</select>
-    <input type="submit" name="verb" value="Export" />
+	<input type="submit" name="verb" value="Export" />
 </form>
 
 <br/>
 <h4>Import</h4>
-<p>kopiere die dateien in den "ornder"</p>
+<p>kopiere die dateien in den "ordner"</p>
 
 <form method="POST" action="<?php echo admin_url( 'tools.php?page=dilewe_h5p_tools' ); ?>" enctype="multipart/form-data">
 	<select id="language" name="language">
@@ -34,8 +34,16 @@ function dilewe_h5p_tools_render()
 	<input type="submit" name="importsubmit" value="Import" />
 </form>
 
+
+<h4>SystemX Export:</h4>
+<p>exportiere eine XML-Datei welche von der SystemX ContentPipeline genutzt werden kann um H5P Elemente in der richtigen Sprache anzuzeigen.</p>
+
+<form method="POST" action="<?php echo admin_url( 'tools.php?page=dilewe_h5p_tools' ); ?>">
+	<input type="submit" name="verb" value="ExportSystemX" />
+</form>
 <?php
 getExportRender();
+getExportSystemXRender();
 getFolder();
 ?>
 
@@ -46,11 +54,11 @@ function getExportRender() {
 	if ($_SERVER["REQUEST_METHOD"] != "POST") { return;}
 	if (!$_REQUEST['verb']) { return;}
 	if (!$_REQUEST['tags']) { return;}
-	
+
 	$name = $_REQUEST['verb'];
 	$tag = $_REQUEST['tags'];
 	if ($name != "Export") { return;}
-	
+
 	$result = getAllTagContent($tag);
 
 	foreach($result as &$o){
@@ -64,17 +72,31 @@ function getExportRender() {
 	<h4>tag <?php echo $tag ?> gewählt:</h4>
 	<a href="data:application/json;base64,<?php echo base64_encode($data);?>" download="data.json.gz">Download</a>
 
-	<?php	
+	<?php
+}
+
+function getExportSystemXRender() {
+	if ($_SERVER["REQUEST_METHOD"] != "POST") { return;}
+	if (!$_REQUEST['verb']) { return;}
+
+	$name = $_REQUEST['verb'];
+	if ($name != "ExportSystemX") { return;}
+
+	$data = getSystemXH5PContent();
+
+	?>
+	<a href="data:text/xml;base64,<?php echo base64_encode($data);?>" download="data.xml">Download</a>
+	<?php
 }
 
 function get_h5p_content_by_id($id){
 	global $wpdb;
-    return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE id = {$id}", ARRAY_A);
+	return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE id = {$id}", ARRAY_A);
 }
 
 function get_h5p_content_by_slug($slug){
 	global $wpdb;
-    return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE slug = '{$slug}'", ARRAY_A);
+	return $wpdb->get_row("SELECT * FROM {$wpdb->prefix}h5p_contents WHERE slug = '{$slug}'", ARRAY_A);
 }
 
 function get_h5p_content_tags($id){
@@ -118,34 +140,13 @@ function import_translation($data, $language = "fr") {
 	$translated_data['parameters'] = json_encode($data['parameters']);
 	$translated_data['filtered'] = $translated_data['parameters'];
 
-	echo $translated_data['parameters'] . "--test1213";
-
 	$oldtags = get_h5p_content_tags($data['id']);
 	$newtags = get_h5p_content_tags($translated_data['id']);
 	$langtag = get_h5p_content_tag_name("lang_" . $language);
 
-	if (is_null($oldtags)) {
-		echo "import error";
-		print_r($data);
-		return;
-	}
-
-	if (is_null($newtags)) {
-		echo "import error";
-		print_r($data);
-		return;
-	}
-
-	if (count($langtag) == 0) {
-		echo "import error";
-		print_r($data);
-		return;
-	}
-
 	// echo "oldtags: " . json_encode($oldtags, JSON_PRETTY_PRINT) . " --- " . "newtags: " . json_encode($newtags, JSON_PRETTY_PRINT);
 	global $checklang;
 	$checklang = true;
-
 
 	foreach ($oldtags as $oldtag) {
 		global $checktag;
@@ -168,7 +169,7 @@ function import_translation($data, $language = "fr") {
 			$wpdb->insert("{$wpdb->prefix}h5p_contents_tags", array("content_id" => $translated_data['id'], "tag_id" => $oldtag["tag_id"]));
 		}
 	}
-	
+
 	if ($checklang) {
 		global $wpdb;
 		$wpdb->insert("{$wpdb->prefix}h5p_contents_tags", array("content_id" => $translated_data['id'], "tag_id" => $langtag[0]["id"]));
@@ -185,7 +186,7 @@ function import_translation($data, $language = "fr") {
 	} catch (\Throwable $th) {
 		echo "Fehler: " . $th->getMessage() . "\n";
 	}*/
-	
+
 	$wpdb->update("{$wpdb->prefix}h5p_contents", $translated_data, ["id" => $translated_data['id']]);
 }
 
@@ -226,13 +227,12 @@ function getFileUploads($path = "/tmp") {
 
 function getAllH5PContent() {
 	global $wpdb;
-    return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents", ARRAY_A);
+	return $wpdb->get_results("SELECT id, title, slug, parameters FROM {$wpdb->prefix}h5p_contents", ARRAY_A);
 }
 
-
-function getAllTagContent( $tag = "emr") { 
+function getAllTagContent( $tag = "emr") {
 	global $wpdb;
-    return $wpdb->get_results(
+	return $wpdb->get_results(
 		"SELECT wp_h5p_contents.id, wp_h5p_contents.title, wp_h5p_contents.slug, wp_h5p_contents.parameters
 		FROM wp_h5p_tags
 		LEFT JOIN wp_h5p_contents_tags ON wp_h5p_contents_tags.tag_id = wp_h5p_tags.id
@@ -240,22 +240,72 @@ function getAllTagContent( $tag = "emr") {
 		WHERE wp_h5p_tags.name = '{$tag}'", ARRAY_A);
 }
 
-function recurse_copy_dir($src,$dst) { 
-    $dir = opendir($src);
+function getSystemXH5PContent() {
+	global $wpdb;
+
+	$tagMap = [];
+	$tags = $wpdb->get_results("SELECT wp_h5p_contents_tags.content_id, wp_h5p_tags.name
+		 FROM wp_h5p_contents_tags
+		 LEFT JOIN wp_h5p_tags ON wp_h5p_tags.id = wp_h5p_contents_tags.tag_id;", ARRAY_A);
+
+	foreach($tags as $t){
+		$id = strval($t['content_id']);
+		if(!isset($map[$id])){
+			$tagMap[$id] = [];
+		}
+		$tagMap[$id][$t['name']] = $t['name'];
+	}
+
+	$content = $wpdb->get_results("SELECT id, title, slug FROM wp_h5p_contents", ARRAY_A);
+	$map = [];
+	foreach($content  as $c){
+		$langFound = false;
+		if(isset($tagMap[$c['id']])){
+			foreach($tagMap[$c['id']] as $t){
+				if(substr($t, 0, 5) == "lang_"){
+					$lang = substr($t, 5);
+					$map[$c['title']][$lang] = $c['id'];
+					$langFound = true;
+				}
+			}
+		}
+		if(!$langFound){
+			$map[$c['title']]['de'] = $c['id'];
+		}
+	}
+
+	$ret = "<EmbedTranslations>\n";
+	foreach($map as $rawTitle => $m){
+		$title = htmlspecialchars($rawTitle);
+		$args = [];
+		if(count($m) <= 1){
+			continue;
+		}
+		foreach($m as $lang => $id) {
+			$args[] = "$lang=$id";
+		}
+		$ret .= "  <Translation title=\"$title\" ".implode(" ",$args)."/>\n";
+	}
+	$ret .= "</EmbedTranslations>\n";
+	return $ret;
+}
+
+function recurse_copy_dir($src,$dst) {
+	$dir = opendir($src);
 	if (!$dir) {
 		return;
 	}
-    @mkdir($dst, 01774);
+	@mkdir($dst, 01774);
 	chmod($dst, 01774);
-    while(false !== ( $file = readdir($dir)) ) { 
-        if (( $file != '.' ) && ( $file != '..' )) { 
-            if ( is_dir($src . '/' . $file) ) { 
-                recurse_copy_dir($src . '/' . $file,$dst . '/' . $file); 
-            } 
-            else { 
-                copy($src . '/' . $file,$dst . '/' . $file); 
-            } 
-        } 
-    } 
-    closedir($dir);
+	while(false !== ( $file = readdir($dir)) ) {
+		if (( $file != '.' ) && ( $file != '..' )) {
+			if ( is_dir($src . '/' . $file) ) {
+				recurse_copy_dir($src . '/' . $file,$dst . '/' . $file);
+			}
+			else {
+				copy($src . '/' . $file,$dst . '/' . $file);
+			}
+		}
+	}
+	closedir($dir);
 }
