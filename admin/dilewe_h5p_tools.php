@@ -59,18 +59,31 @@ function getExportRender() {
 	$tag = $_REQUEST['tags'];
 	if ($name != "Export") { return;}
 
-	$result = getAllTagContent($tag);
+	$zip = new ZipArchive();
+	$filename = tempnam("/tmp", "h5pexport_");
 
+	if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+		exit("cannot open <$filename>\n");
+	}
+	
+	$result = getAllTagContent($tag);
+	
 	foreach($result as &$o){
+		
 		$o['parameters'] = json_decode($o['parameters'],true);
+		$id = $o['id'];
+		$zip->addFromString("h5pexport_" . date("Ymd") . "/$id.json" , json_encode($o, JSON_PRETTY_PRINT));
 	}
 
-	$data =  gzencode(json_encode($result, JSON_PRETTY_PRINT));
+	echo "numfiles: " . $zip->numFiles . "\n";
+	echo "status:" . $zip->status . "\n";
+	$zip->close();
+	$data = file_get_contents($filename);
 
 	?>
 
 	<h4>tag <?php echo $tag ?> gewählt:</h4>
-	<a href="data:application/json;base64,<?php echo base64_encode($data);?>" download="data.json.gz">Download</a>
+	<a href="data:application/zip;base64,<?php echo base64_encode($data);?>" download="h5pexport.zip">Download</a>
 
 	<?php
 }
