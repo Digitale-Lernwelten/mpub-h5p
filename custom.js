@@ -85,3 +85,24 @@ H5P.externalDispatcher.on('xAPI', function (event) {
 		console.warn("Empty parentUrl: ", parentUrl);
 	}
 });
+
+const replaceWithGermanQuotes = (node) => {
+	node.childNodes.forEach(replaceWithGermanQuotes);
+	if(node.nodeType === 3){ // Text node
+		let oldText = node.textContent;
+		const newText = oldText.replaceAll('”', '"').replace('“', '"').replace(/"(.*)"/g, '„$1“');
+		if(newText !== oldText){
+			node.textContent = newText;
+		}
+	}
+};
+
+const replaceWithGermanQuotesHandler = (event) => {
+	const $target = event.data.$target;
+	if(!$target){return;}
+	for(let i=0;i<$target.length;i++){
+		replaceWithGermanQuotes($target[i]);
+	}
+};
+
+H5P.externalDispatcher.on('domChanged', replaceWithGermanQuotesHandler);
