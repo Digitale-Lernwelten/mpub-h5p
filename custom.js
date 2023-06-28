@@ -90,7 +90,11 @@ const replaceWithGermanQuotes = (node) => {
 	node.childNodes.forEach(replaceWithGermanQuotes);
 	if(node.nodeType === 3){ // Text node
 		let oldText = node.textContent;
-		const newText = oldText.replaceAll('=', '"').replaceAll('“', '"').replace(/"(.*?)"/g, '„$1”');
+		const newText = oldText
+			.replaceAll("„",'"')
+			.replaceAll('”', '"')
+			.replaceAll('“', '"')
+			.replace(/"(.*?)"/g, '„$1“');
 		if(newText !== oldText){
 			node.textContent = newText;
 		}
