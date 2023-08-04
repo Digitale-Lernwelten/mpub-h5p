@@ -2778,7 +2778,9 @@ body.lasub .vco-timeline .vco-navigation .timenav .content .marker .line .event-
 /*Fill in the Table*/
 .h5p-question-content {
     overflow: auto;
+    padding-top: 6px;
 }
+
 .h5p-blankTable .h5p-text-input:focus {
   box-shadow: 0 0 0.5em 0 var(--dlw-blue);
   border-color: var(--dlw-blue)50;
