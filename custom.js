@@ -51,9 +51,6 @@
 		}
 	}
 
-	window.addEventListener("load", hotSpotFix);
-	window.addEventListener("load", FullScreenToggler);
-
 	const referrerToClass = ref => {
 		const refClassMapping = {
 			"vorschau.test-dilewe.de": "dbhessen",
@@ -111,30 +108,66 @@
 	};
 
 	H5P.externalDispatcher.on('domChanged', replaceWithGermanQuotesHandler);
+	H5P.externalDispatcher.on('domChanged', FullScreenToggler);
+	H5P.externalDispatcher.on('domChanged', hotSpotFix);
 
-	const cpUserDataKey = (contentId, subContentId, dataId) => `Dilewe-H5P-${contentId}-${subContentId}-${dataId}`;
-	const cpGetUserData = async (contentId, subContentId, dataId) => {
-		const key = cpUserDataKey(contentId, subContentId, dataId);
-		const raw = localStorage.getItem(key);
-		if(!raw){
-			return null;
+	const getUserDataTimeouts = new Map();
+	const getUserDataPromiseResolver = new Map();
+	window.addEventListener('message', (event) => {
+		const msg = event.data || {};
+		switch(msg.T){
+		case "GetUserData":
+			const id = msg.id;
+			if(!id){
+				throw new Error("Invalid message, GetUserData without id");
+			}
+
+			const data = msg.data;
+			if(data){
+				for(const res of getUserDataPromiseResolver.get(id) || []){
+					setTimeout(() => res(data), 0);
+				}
+				getUserDataPromiseResolver.delete(id);
+			}
+			break;
+		default:
+			break;
 		}
-		try {
-			return JSON.parse(raw);
-		} catch (e) {
-			console.warn(`Couldn't parse local user data JSON: ${raw}`);
-			return null;
-		}
+	});
+	
+	const cpGetUserData = (contentId, subContentId, dataId) => {
+		const id = `${contentId}-${subContentId}-${dataId}`;
+		const prom = new Promise((res) => {
+			if((getUserDataPromiseResolver.get(id) || []).length <= 0){
+				const msg = {
+					T: "GetUserData",
+					id
+				};
+				parent.postMessage(msg, "*");
+				getUserDataTimeouts.set(id, setTimeout(() => {
+					for(const res of getUserDataPromiseResolver.get(id) || []){
+						setTimeout(() => res(), 0);
+					}
+					getUserDataPromiseResolver.delete(id);
+					getUserDataTimeouts.delete(id);
+				}, 100));
+			}
+			if(!getUserDataPromiseResolver.get(id)){
+				getUserDataPromiseResolver.set(id, []);
+			}
+			getUserDataPromiseResolver.get(id).push(res);
+		});
+		return prom;
 	};
 
 	const cpSaveUserData = async (contentId, subContentId, dataId, data) => {
-		const key = cpUserDataKey(contentId, subContentId, dataId);
-		try {
-			const raw = JSON.stringify(data);
-			localStorage.setItem(key, raw);
-		} catch (e) {
-			console.error("Can't store in local storage: ", data);
-		}
+		const id = `${contentId}-${subContentId}-${dataId}`;
+		const msg = {
+			T: "SaveUserData",
+			id,
+			data,
+		};
+		parent.postMessage(msg, "*");
 	};
 
 	H5P.getUserData = function (contentId, dataId, done, subContentId) {
