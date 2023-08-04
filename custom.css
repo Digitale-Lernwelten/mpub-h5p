@@ -1072,6 +1072,11 @@ body.lasub .h5p-drag-text [aria-grabbed].h5p-drag-dropped {
   width: 65% !important;
 }
 
+/* Drag Text Solution no line break */
+.h5p-drag-text .h5p-drag-show-solution-container.incorrect {
+  white-space: nowrap;
+}
+
 /*Drag and Drop*/
 
 /*Drag-Element im Editor*/
