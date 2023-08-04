@@ -30,6 +30,7 @@
 	const FullScreenToggler = () => {
 		const currentEnv = document.body.classList;
 		const h5pContainer = document.querySelector(".h5p-container.h5p-standalone");
+		if (!h5pContainer) { return;}
 		const hasControls = Boolean(h5pContainer.querySelector(".h5p-content-controls"));
 		if (!hasControls) {
 			//build the toggler like the h5p integrated one to look same
