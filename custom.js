@@ -1,6 +1,7 @@
 (() => {
 	const hotSpotReplace = () => {
 		const textOf = document.querySelector(".h5p-question-feedback-content-text");
+		if (!textOf) { return;}
 		textOf.innerText = textOf.innerText.replace(" of ", " von ");
 	}
 
