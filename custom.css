@@ -1072,6 +1072,11 @@ body.lasub .h5p-drag-text [aria-grabbed].h5p-drag-dropped {
   width: 65% !important;
 }
 
+/* Drag Text Solution no line break */
+.h5p-drag-text .h5p-drag-show-solution-container.incorrect {
+  white-space: nowrap;
+}
+
 /*Drag and Drop*/
 
 /*Drag-Element im Editor*/
@@ -2773,7 +2778,9 @@ body.lasub .vco-timeline .vco-navigation .timenav .content .marker .line .event-
 /*Fill in the Table*/
 .h5p-question-content {
     overflow: auto;
+    padding-top: 6px;
 }
+
 .h5p-blankTable .h5p-text-input:focus {
   box-shadow: 0 0 0.5em 0 var(--dlw-blue);
   border-color: var(--dlw-blue)50;
