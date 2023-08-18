@@ -3186,7 +3186,8 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
 /*Hide Check Answer Button*/
 .lasub .h5p-content[data-content-id="1663"] .h5p-question-buttons.h5p-question-visible,
 .lasub .h5p-content[data-content-id="1749"] .h5p-question-buttons.h5p-question-visible,
-.lasub .h5p-content[data-content-id="2926"] .h5p-question-buttons.h5p-question-visible  {
+.lasub .h5p-content[data-content-id="2926"] .h5p-question-buttons.h5p-question-visible,
+.lasub .h5p-content[data-content-id="2911"] .h5p-question-buttons.h5p-question-visible   {
 	display: none;
 }
 
