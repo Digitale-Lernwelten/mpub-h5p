@@ -1718,14 +1718,14 @@ body.lasub .h5p-true-false-answer[aria-checked=true] {
   transform: scale(1.5);
 }
 
-.h5p-image-hotspot:before {
+/*.h5p-image-hotspot:before {
   font-family: H5PFontAwesome4;
   width: 1.2em;
   height: 1.2em;
   font-size: 1.2em;
   line-height: 1.2em;
   margin: 0 0.1em;
-}
+}*/
 
 .h5p-image-hotspots-container {
   font-size: 24px!important;
@@ -3314,9 +3314,8 @@ body.lasub .h5p-crossword .h5p-crossword-cell.h5p-crossword-highlight-focus {
     display: none;
 }
 
-.h5p-sc-set-wrapper.navigatable.initialized {
-  margin: 1rem;
-}
+
+
 
 /* *************************************************************** */
 /* HERE STARTS THE CUSTOM PART FOR THE JURA MUSEUM WITH OVERRRIDES */
