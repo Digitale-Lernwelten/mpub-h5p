@@ -2262,6 +2262,11 @@ body.lasub .h5p-image-juxtaposition-image .h5p-image-juxtaposition-label {
 	background-color: #cc8002bd; /*Attention, rgba with variable wasn't working*/
 }
 
+.h5p-image-juxtaposition .h5p-image-juxtaposition-handle {
+  width: 70px;
+  margin-left: -35px;
+}
+
 /*Image Pair*/
 
 .h5p-image-pair-desc {
