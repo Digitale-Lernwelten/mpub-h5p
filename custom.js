@@ -136,6 +136,16 @@
 			break;
 		}
 	});
+
+	const contentTypeIntrospection = () => {
+		const types = Array.from((new Set(H5P.instances.map(i => i.libraryInfo.machineName))).values());
+		const msg = {
+			T: "ActiveContentTypes",
+			types
+		};
+		parent.postMessage(msg, "*");
+	};
+	setTimeout(contentTypeIntrospection,0);
 	
 	const cpGetUserData = (contentId, subContentId, dataId) => {
 		const id = `${contentId}-${subContentId}-${dataId}`;
