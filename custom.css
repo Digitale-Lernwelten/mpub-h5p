@@ -3406,3 +3406,20 @@ html.h5p-iframe > body .h5p-tag-cbm {
   src: url("../fonts/source-sans-pro-v21-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff2") format('woff2');
 }
 /* ----------------------- CBM Christoffel custom END ----------------------- */
+
+/* ----------------------- NETBOOK custom START ----------------------------- */
+/* project - contenttype - field */
+.netbook .h5p-image-pair .h5p-image-pair-desc,
+.netbook .h5p-image-sequencing .h5p-question-introduction,
+.netbook .h5p-dictation .h5p-question-introduction,
+.netbook .h5p-dragquestion .h5p-question-introduction,
+.netbook .h5p-crossword .h5p-task-description,
+.netbook .h5p-mark-the-words .h5p-question-introduction,
+.netbook .h5p-image-hotspot-question .h5p-question-introduction,
+.netbook .h5p-blanks .h5p-question-introduction,
+.netbook .h5p-blankTable .h5p-question-introduction,
+.netbook .h5p-drag-text .h5p-question-introduction,
+.netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description {
+  display: none;
+}
+/* ----------------------- NETBOOK custom END ------------------------------- */

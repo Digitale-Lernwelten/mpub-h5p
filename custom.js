@@ -110,3 +110,14 @@ const replaceWithGermanQuotesHandler = (event) => {
 };
 
 H5P.externalDispatcher.on('domChanged', replaceWithGermanQuotesHandler);
+
+const contentTypeIntrospection = () => {
+		const types = Array.from((new Set(H5P.instances.map(i => i.libraryInfo.machineName))).values());
+		const msg = {
+			T: "ActiveContentTypes",
+			href: String(window.location),
+			types
+		};
+		parent.postMessage(msg, "*");
+	};
+	setTimeout(contentTypeIntrospection,100);
