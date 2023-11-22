@@ -3422,4 +3422,8 @@ html.h5p-iframe > body .h5p-tag-cbm {
 .netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description {
   display: none;
 }
+
+.netbook .h5p-mark-the-words .h5p-word-inner {
+  padding: 1rem 0 0 0;
+}
 /* ----------------------- NETBOOK custom END ------------------------------- */
