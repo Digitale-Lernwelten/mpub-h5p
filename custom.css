@@ -3419,7 +3419,9 @@ html.h5p-iframe > body .h5p-tag-cbm {
 .netbook .h5p-blanks .h5p-question-introduction,
 .netbook .h5p-blankTable .h5p-question-introduction,
 .netbook .h5p-drag-text .h5p-question-introduction,
-.netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description {
+.netbook .h5p-question .h5p-question-introduction,
+.netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description,
+.netbook .h5p-summary .summary-evaluation-content {
   display: none;
 }
 
