@@ -3409,6 +3409,14 @@ html.h5p-iframe > body .h5p-tag-cbm {
 
 /* ----------------------- NETBOOK custom START ----------------------------- */
 /* project - contenttype - field */
+.netbook .h5p-blanks .h5p-question-introduction,
+.netbook .h5p-image-sequencing .h5p-task-description,
+.netbook .h5p-find-the-words .h5p-task-description,
+.netbook .h5p-blankTable .h5p-question-introduction,
+.netbook .h5p-crossword .h5p-question-introduction,
+.netbook .h5p-multichoice .h5p-question-introduction,
+.netbook .h5p-true-false .h5p-question-introduction,
+.netbook .h5p-dialogcards .h5p-dialogcards-title,
 .netbook .h5p-image-pair .h5p-image-pair-desc,
 .netbook .h5p-image-sequencing .h5p-question-introduction,
 .netbook .h5p-dictation .h5p-question-introduction,
