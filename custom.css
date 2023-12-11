@@ -3416,9 +3416,8 @@ html.h5p-iframe > body .h5p-tag-cbm {
 .netbook .h5p-crossword .h5p-task-description,
 .netbook .h5p-mark-the-words .h5p-question-introduction,
 .netbook .h5p-image-hotspot-question .h5p-question-introduction,
-.netbook .h5p-blanks .h5p-question-introduction,
-.netbook .h5p-blankTable .h5p-question-introduction,
 .netbook .h5p-drag-text .h5p-question-introduction,
+.netbook .h5p-essay-input-field-label,
 .netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description,
 .netbook .h5p-summary .summary-evaluation-content {
   display: none;
@@ -3427,4 +3426,11 @@ html.h5p-iframe > body .h5p-tag-cbm {
 .netbook .h5p-mark-the-words .h5p-word-inner {
   padding: 1rem 0 0 0;
 }
+
+/* ----------------------- H5P custom IDs ----------------------------- */
+
+[data-content-id="2563"] .h5p-question-scorebar-container {
+  display: none;
+}
+
 /* ----------------------- NETBOOK custom END ------------------------------- */
