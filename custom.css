@@ -3422,13 +3422,18 @@ html.h5p-iframe > body .h5p-tag-cbm {
 .netbook .h5p-dictation .h5p-question-introduction,
 .netbook .h5p-dragquestion .h5p-question-introduction,
 .netbook .h5p-crossword .h5p-task-description,
-/* .netbook .h5p-mark-the-words .h5p-question-introduction, */
+.netbook .h5p-mark-the-words .h5p-question-introduction,
 .netbook .h5p-image-hotspot-question .h5p-question-introduction,
 .netbook .h5p-drag-text .h5p-question-introduction,
 .netbook .h5p-essay-input-field-label,
 .netbook .h5p-sort-paragraphs .h5p-sort-paragraphs-task-description,
 .netbook .h5p-summary .summary-evaluation-content {
   display: none;
+}
+
+.netbook .questionset .h5p-task-description,
+.netbook .questionset .h5p-question-introduction {
+    display: block;
 }
 
 .netbook .h5p-mark-the-words .h5p-word-inner {
