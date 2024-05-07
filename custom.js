@@ -63,11 +63,14 @@
 			"module-sachsen.dilewe.de": "lasub",
 			"lasub.staging.test-dilewe.de": "lasub",
 
-			"vorschau-netbook.dilewe.de": "netbook",
+
+		        "vorschau-netbook.dilewe.de": "netbook",
+		        "localhost": "netbook",
+	                "netbook-deutsch.de": "netbook",
 			"h5p-netbook.test-dilewe.de": "netbook",
 
 		};
-		return refClassMapping[ref] || "unknown";
+		return refClassMapping[ref] || "netbook";
 	};
 
 	document.addEventListener("DOMContentLoaded", () => {
@@ -86,32 +89,77 @@
 		}
 	});
 
-	const replaceWithGermanQuotes = (node) => {
-		node.childNodes.forEach(replaceWithGermanQuotes);
-		if(node.nodeType === 3){ // Text node
-			let oldText = node.textContent;
-			const newText = oldText
-				.replaceAll("„",'"')
-				.replaceAll('”', '"')
-				.replaceAll('“', '"')
-				.replace(/"(.*?)"/g, '„$1“');
-			if(newText !== oldText){
-				node.textContent = newText;
-			}
-		}
-	};
 
 	const replaceWithGermanQuotesHandler = (event) => {
 		const $target = event.data.$target;
 		if(!$target){return;}
+
+		const replaceWithGermanQuotes = (node) => {
+			node.childNodes.forEach(replaceWithGermanQuotes);
+			if(node.nodeType === 3){ // Text node
+				let oldText = node.textContent;
+				const newText = oldText
+					.replaceAll("„",'"')
+					.replaceAll('”', '"')
+					.replaceAll('“', '"')
+					.replace(/"(.*?)"/g, '„$1“');
+				if(newText !== oldText){
+					node.textContent = newText;
+				}
+			}
+		};
+
 		for(let i=0;i<$target.length;i++){
 			replaceWithGermanQuotes($target[i]);
 		}
 	};
 
-	H5P.externalDispatcher.on('domChanged', replaceWithGermanQuotesHandler);
 	H5P.externalDispatcher.on('domChanged', FullScreenToggler);
 	H5P.externalDispatcher.on('domChanged', hotSpotFix);
+
+
+    let germanQuotationTimeout = null;
+    const replaceWithGermanQuotes = () => {
+        germanQuotationTimeout = null;
+        const $target = document.body;
+        let inQuotes = false;
+        const recNormalize = (node) => {
+            if (node.nodeType === 3) { // Only Text nodes
+		const oldText = node.textContent;
+		let newText = '';
+		for(let i=0;i<oldText.length;i++){
+                    const c = oldText.charAt(i);
+                    if((c === '"') || (c === '„') || (c === '”') || (c === '“')){
+			if(inQuotes){
+                            newText += '”';
+			} else {
+                            newText += '„';
+			}
+			inQuotes = !inQuotes;
+                    } else {
+			newText += c;
+	   	    }
+		}
+		if (newText !== oldText) {
+                    node.textContent = newText;
+		}
+	    }
+            node.childNodes.forEach(recNormalize);
+        };
+	recNormalize($target);
+    };
+
+    H5P.externalDispatcher.on('domChanged', () => {
+        if(germanQuotationTimeout){
+            clearTimeout(germanQuotationTimeout);
+        }
+        germanQuotationTimeout = setTimeout(replaceWithGermanQuotes, 100);
+    });
+	germanQuotationTimeout = setTimeout(replaceWithGermanQuotes, 500);
+
+
+
+
 
 	const getUserDataTimeouts = new Map();
 	const getUserDataPromiseResolver = new Map();
@@ -146,7 +194,7 @@
 		parent.postMessage(msg, "*");
 	};
 	setTimeout(contentTypeIntrospection,0);
-	
+
 	const cpGetUserData = (contentId, subContentId, dataId) => {
 		const id = `${contentId}-${subContentId}-${dataId}`;
 		const prom = new Promise((res) => {
@@ -193,7 +241,8 @@
 			done(err);
 		});
 	};
-	
+
+
 	H5P.setUserData = function (contentId, dataId, data, extras) {
 		cpSaveUserData(contentId, 0, dataId, data);
 	};
